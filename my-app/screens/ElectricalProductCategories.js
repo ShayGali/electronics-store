@@ -1,30 +1,36 @@
-// CountriesScreen.js
+import { View, Text, FlatList } from 'react-native';
+import { CATEGORIES } from '../data/data';
+import styles from '../assets/Style'
+import CategoryGridTile from '../components/CategoryGridTile'
 
-import { StyleSheet, Text, View, Button } from "react-native";
 
-export default function ElectricalProductCategories({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text>Categories screen</Text>
-      <Button
-        title="Go to Products..."
-        onPress={() => navigation.navigate("Products")}
+export default function HomeScreen({ navigation }) {
+  const renderGridItem = ({ item }) => {
+    return (
+      <CategoryGridTile
+        title={item.title}
+        imgUrl={item.imgUrl}
+        onSelect={() => {
+          navigation.navigate("Products", {
+            categoryID: item.id,
+            categoryName: item.title
+          });
+        }}
       />
-      {/* replace() function - we cannot go back. replace the first screen to the current screen */}
-      {/* <Button
-        color="green"
-        title="Use replace..."
-        onPress={() => navigation.replace("Products")}
-      /> */}
+    );
+  };
+
+  return (
+    <View style={styles.BG}>
+      <View style={styles.container}>
+        <Text style={[styles.titles,{fontSize:50}]}>Categories</Text>
+      </View>
+      <FlatList
+        keyExtractor={(item) => item.id}
+        data={CATEGORIES}
+        renderItem={renderGridItem}
+        numColumns={2}
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
