@@ -37,14 +37,14 @@ export default StyleSheet.create({
     
   },
   titles: {
-    fontSize: '130%',
+    fontSize: 20,
     // color: "#48C9B0",
-    color: "white",
+    color: "#48C9B0",
     textAlign: "center",
     textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
-    // fontFamily: "open-sans-bold",
+    fontFamily: 'system font',
     fontWeight: "bold",
     margin: 10,
     

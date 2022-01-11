@@ -1,6 +1,6 @@
-import { View,  FlatList,Text } from 'react-native';
+import React from "react";
+import { View,  FlatList,Text ,TouchableOpacity,ImageBackground } from 'react-native';
 import styles from '../assets/Style';
-// import ProductGridTile from './../components/ProductGridTile';
 import { CATEGORIES, PRODUCTS } from '../data/data';
 
 export default function CategoryScreen({ route, navigation }) {
@@ -9,36 +9,33 @@ export default function CategoryScreen({ route, navigation }) {
 
   // const catTitle = CATEGORIES.find(cat => cat.id === categoryID).title
 
-  const displayedProducts = PRODUCTS.filter(item => item.catID == categoryID)
-
+  const displayedProducts = PRODUCTS.filter(item => item.category == categoryID)
   const renderGridItem = ({ item }) => {
     return (
-      // TODO: change this
-      <ProductGridTile
-        imageUrl={item.imageUrl}
-        title={item.title}
-        price={item.price}
-        onSelect={() => {
-          navigation.navigate("ProductDetail", {
+    <TouchableOpacity style={styles.gridItem} onPress={()=>{navigation.navigate("ProductDetail", {
             productID: item.id,
-            productTitle: item.title
-          });
-        }}
-      />
+            categoryName: item.title
+          })}}>
+
+      <ImageBackground imageStyle={{borderRadius: 25}} source={{uri:item.imgUrl}} resizeMode="cover" style={styles.BGImg}>
+      <View style={{alignItems:"center",justifyContent:'center'}}>
+          <Text style={styles.titles}>{item.title}, {item.price}</Text>
+        </View>
+      </ImageBackground>
+      
+    </TouchableOpacity>
+
     );
   };
 
   return (
     <View style={styles.BG}>
-      {/* <View style={{padding:120}}>
         <FlatList
-          data={displayedProducts}
           keyExtractor={(item) => item.id}
+          data={displayedProducts}
           renderItem={renderGridItem}
           numColumns={2}
         />
-      </View> */}
-      <Text>asdsadd</Text>
     </View>
   );
 }
