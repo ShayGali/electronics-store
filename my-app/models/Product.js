@@ -1,6 +1,6 @@
 export default class Product {
 
-    constructor(id,imgUrl,category, title, description, price,dimensions,weight,shippingPrice, reviews){
+    constructor(id,category,imgUrl, title, description, price,dimensions,weight,shippingPrice, reviews){
         this.id = id;
         this.category = category;
         this.imgUrl = imgUrl;
