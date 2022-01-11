@@ -39,7 +39,7 @@ export default StyleSheet.create({
   titles: {
     fontSize: 20,
     // color: "#48C9B0",
-    color: "#48C9B0",
+    color: "white",
     textAlign: "center",
     textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
