@@ -1,10 +1,13 @@
 import { StyleSheet } from "react-native";
 
+
 export default StyleSheet.create({
 
   //Main body
   BG: {
     flex: 1,
+    // backgroundColor: "#F8F9F9"
+    backgroundColor: "#1C2833"
   },
   container: {
     flex: 1,
@@ -34,17 +37,25 @@ export default StyleSheet.create({
     
   },
   titles: {
-    fontSize: 28,
+    fontSize: '130%',
+    // color: "#48C9B0",
     color: "white",
-    textShadowColor: "#222",
-    textShadowOffset: { width: 2, height: 3 },
+    textAlign: "center",
+    textShadowColor: "black",
+    textShadowOffset: { width: 3, height: 0 },
+    textShadowRadius: 3,
+    // fontFamily: "open-sans-bold",
+    fontWeight: "bold",
     margin: 10,
+    
   },
 
 
   //BG img
   BGImg: {
     height: 145,
+    backgroundColor: "#85C1E9",
+    borderRadius: 25
   },
 
 
