@@ -37,7 +37,7 @@ export default StyleSheet.create({
     
   },
   titles: {
-    fontSize: 20,
+    fontSize: 27,
     // color: "#48C9B0",
     color: "white",
     textAlign: "center",
