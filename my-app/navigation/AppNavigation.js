@@ -7,8 +7,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // import screens:
-import CategoriesScreen from "../screens/ElectricalProductCategories";
-import ProductsScreen from "../screens/ProductsPerCategory";
+import HomeScreen from "../screens/HomeScreen";
+import CategoryScreen from "../screens/CategoryScreen";
 import ProductsDetailScreen from "../screens/ProductDetail";
 import CartScreen from "../screens/CartScreen";
 import PaymentScreen from "../screens/PaymentScreen";
@@ -21,9 +21,9 @@ const Stack = createNativeStackNavigator();
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Categories">
-        <Stack.Screen name="Categories" component={CategoriesScreen} />
-        <Stack.Screen name="Products" component={ProductsScreen} />
+      <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
         <Stack.Screen name="ProductDetail" component={ProductsDetailScreen} />
         <Stack.Screen name="Cart" component={CartScreen} />
         <Stack.Screen name="Payment" component={PaymentScreen} />
