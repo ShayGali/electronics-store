@@ -44,7 +44,7 @@ export default StyleSheet.create({
     textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
-    fontFamily: 'system font',
+    fontFamily: "oswald,reggae-One",
     fontWeight: "bold",
     margin: 10,
     
@@ -64,6 +64,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     fontSize: 62,
+    fontFamily: "oswald,reggae-One",
     color: 'beige',
     textShadowColor: 'brown',
     textShadowOffset: { width: 2, height: 3 }
@@ -74,6 +75,7 @@ export default StyleSheet.create({
     alignContent: 'center',
     fontSize: 42,
     color: '#fff',
+    fontFamily: "oswald,reggae-One",
     textShadowColor: 'red',
     textShadowOffset: { width: 1, height: 2 }
   },
@@ -81,6 +83,7 @@ export default StyleSheet.create({
   regText: {
     fontSize: 28,
     color: 'cornsilk',
+    fontFamily: "oswald,reggae-One",
   },
   prodImg: {
     marginTop: 30,
