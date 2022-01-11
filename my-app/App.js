@@ -4,6 +4,11 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import * as Font from "expo-font"; // import font
 import AppLoading from "expo-app-loading";
 
+/*
+in terminal - 
+expo install expo font
+expo install expo-app-loading
+*/
 
  const fetchFonts = () => {
    Font.loadAsync({
