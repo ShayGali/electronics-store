@@ -1,4 +1,6 @@
-import { View, Text, FlatList } from 'react-native';
+import React from "react";
+
+import { View, Text, FlatList,TouchableOpacity,ImageBackground } from 'react-native';
 import { CATEGORIES } from '../data/data';
 import styles from '../assets/Style'
 import CategoryGridTile from '../components/CategoryGridTile'
@@ -7,16 +9,17 @@ import CategoryGridTile from '../components/CategoryGridTile'
 export default function HomeScreen({ navigation }) {
   const renderGridItem = ({ item }) => {
     return (
-      <CategoryGridTile
-        title={item.title}
-        imgUrl={item.imgUrl}
-        onSelect={() => {
-          navigation.navigate("Products", {
+      <TouchableOpacity style={styles.gridItem} onPress={()=>{navigation.navigate("Products", {
             categoryID: item.id,
             categoryName: item.title
-          });
-        }}
-      />
+          })}}>
+      <ImageBackground imageStyle={{borderRadius: 25}} source={{uri:item.imgUrl}} resizeMode="cover" style={styles.BGImg}>
+        <View style={styles.gridContainer}>
+          <Text style={styles.titles}>{item.title}</Text>
+        </View>
+      </ImageBackground>
+    </TouchableOpacity>
+     
     );
   };
 

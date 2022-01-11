@@ -7,11 +7,8 @@ import { StyleSheet, Text, View, Button } from "react-native";
 export default function ProductDetail({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Country trip screen</Text>
-      <Button
-        title="Go to trip details..."
-        onPress={() => navigation.navigate("TripDetail")}
-      />
+      <Text>Product Detail screen</Text>
+      
 
       {/* The goBack() function is built-in */}
       <Button title="Go back.." onPress={() => navigation.goBack()} />

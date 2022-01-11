@@ -1,27 +1,44 @@
-//TripDetailScreen
-import { StyleSheet, Text, View, Button } from "react-native";
+import { View,  FlatList,Text } from 'react-native';
+import styles from '../assets/Style';
+// import ProductGridTile from './../components/ProductGridTile';
+import { CATEGORIES, PRODUCTS } from '../data/data';
 
-export default function ProductsPerCategory({ navigation }) {
+export default function ProductsPerCategory({ route, navigation }) {
+
+  const categoryID = route.params.categoryID
+
+  // const catTitle = CATEGORIES.find(cat => cat.id === categoryID).title
+
+  const displayedProducts = PRODUCTS.filter(item => item.catID == categoryID)
+
+  const renderGridItem = ({ item }) => {
     return (
-      <View style={styles.container}>
-        <Text>Products screen</Text>
-  
-        {/* Both buttons go to the same place: */}
-        <Button title="Go the Categories" onPress={() => navigation.popToTop()} />
-        
-        <Button
-          title="Go the Categories"
-          onPress={() => navigation.navigate("Categories")}
-        />
-      </View>
+      // TODO: change this
+      <ProductGridTile
+        imageUrl={item.imageUrl}
+        title={item.title}
+        price={item.price}
+        onSelect={() => {
+          navigation.navigate("ProductDetail", {
+            productID: item.id,
+            productTitle: item.title
+          });
+        }}
+      />
     );
-  }
-  
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-  });
+  };
+
+  return (
+    <View style={styles.BG}>
+      {/* <View style={{padding:120}}>
+        <FlatList
+          data={displayedProducts}
+          keyExtractor={(item) => item.id}
+          renderItem={renderGridItem}
+          numColumns={2}
+        />
+      </View> */}
+      <Text>asdsadd</Text>
+    </View>
+  );
+}
