@@ -36,7 +36,7 @@ export default function ProductsDetailScreen({ route, navigation }) {
           </View>
           <View style={{ marginBottom: 30 }}>
             <Text style={[styles.headLines, { marginBottom: 10 }]}>Reviews</Text>
-            <Text style={[styles.regText, styles.boxFrame]}>{currentProduct.reviews.review.reduce((a,b)=> a+b,0)/currentProduct.reviews.review.length}</Text>
+            <Text style={[styles.regText, styles.boxFrame]}>{currentProduct.reviews.calcGrade()}</Text>
           </View>
           <View style={{ flexDirection: "row" }}>
             <Text style={[styles.regText, { marginBottom: 5 }]}>Add to cart -{'>'}  </Text>
