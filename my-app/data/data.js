@@ -3,6 +3,13 @@ import Product from '../models/Product'
 import Review from '../models/Review'
 
 
+export const COUPONS = [
+    {id:"1", coupon:"ShayG$", discountPercentages: 15},
+    {id:"2", coupon:"Wow35", discountPercentages: 35},
+    {id:"3", coupon:"IDK_O^O", discountPercentages: 50}
+]
+
+
 
 export const CATEGORIES = [
     new Categories('c1','Air conditioners','https://image.flaticon.com/icons/png/512/1247/1247269.png' ),
