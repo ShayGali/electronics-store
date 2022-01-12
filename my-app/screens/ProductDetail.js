@@ -17,7 +17,7 @@ export default function ProductsDetailScreen({ route, navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <View style={{ margin: 80 }}>
+        <View style={{ margin: 50 }}>
           <View>
             <Image style={styles.prodImg} source={image} />
           </View>
@@ -34,9 +34,9 @@ export default function ProductsDetailScreen({ route, navigation }) {
             <Text style={[styles.regText, { margin: 5 }]}>Shipping price: {currentProduct.shippingPrice}$</Text>
             <Text style={[styles.regText, { margin: 5 }]}>Final price: {currentProduct.price + currentProduct.shippingPrice}$</Text>
           </View>
-          <View style={{ marginBottom: 30 }}>
-            <Text style={[styles.headLines, { marginBottom: 10 }]}>Reviews</Text>
-            <Text style={[styles.regText, styles.boxFrame]}>{currentProduct.reviews.calcGrade()}</Text>
+          <View style={[styles.boxFrame, { marginBottom: 30 }]}>
+            <Text style={[styles.headLines]}>Reviews:  </Text>
+            <Text style={[styles.regText, styles.boxFrame]}>{currentProduct.reviews.calcGrade()} / 5</Text>
           </View>
           <View style={{ flexDirection: "row" }}>
             <Text style={[styles.regText, { marginBottom: 5 }]}>Add to cart -{'>'}  </Text>
