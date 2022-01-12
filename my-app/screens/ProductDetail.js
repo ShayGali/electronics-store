@@ -17,6 +17,7 @@ export default function ProductDetail({ route, navigation }) {
     <View style={styles.BG}>
       <ScrollView>
         <View style={{ margin: 50 }}>
+          
            <Text style={[styles.mainHL, { marginBottom: 20 }]}>{currentProduct.title}</Text>
 
           <View style={[styles.viewProductImg]}>
@@ -37,16 +38,17 @@ export default function ProductDetail({ route, navigation }) {
           </View>
 
           <View style={[styles.boxFrame, { marginBottom: 30, flexDirection: 'row' }]}>
-            <Text style={[styles.headLines]}>Reviews:  </Text>
-            <Text style={[styles.regText, styles.boxFrame]}>{currentProduct.reviews.calcGrade()} / 5</Text>
+            <Text style={[styles.headLines, {fontSize: 32}]}>Reviews: </Text>
+            <Text style={[styles.regText, {marginTop: 10}]}>{currentProduct.reviews.calcGrade()} / 5</Text>
           </View>
 
-          <View style={{ flexDirection: "row" }}>
-            <Text style={[styles.regText, { marginBottom: 5 }]}>Add to cart -{'>'}  </Text>
+          <View style={[styles.AddToCart, { flexDirection: "row" }]}>
 
-            <TouchableOpacity 
+            <TouchableOpacity  
+            style={{flexDirection: "row"}}
               onPress={()=>navigation.navigate("Cart",{productID: currentProduct.id,productName: currentProduct.title,flag: true })}
               >
+              <Text style={[styles.AddToCartText, { marginBottom: 5 }]}>Add to cart -{'>'}  </Text>
               <Icon name="cart" style={{ fontSize:50}}/>
             </TouchableOpacity>
             
