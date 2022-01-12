@@ -104,8 +104,43 @@ export default StyleSheet.create({
     padding:20,
     flexWrap: "wrap",
   },
+
   viewProductImg:{
     alignItems: "center",
+  },
+
+  AddToCart: {
+    backgroundColor: "#48C9B0",
+    borderWidth: 4,
+    borderColor: 'white',
+    borderRadius: 20,
+    shadowColor: "grey",
+    shadowOpacity: 0.7,
+    shadowOffset: { width: 2, height: 4 },
+    shadowRadius: 7,
+    elevation: 3, // for android - to see the shadow
+
+  },
+
+  AddToCartText: {
+    color: "black",
+    fontSize: 30,
+    fontFamily: "oswald,reggae-One",
+    fontWeight: "bold",
+    marginLeft: 15,
+    textShadowColor: "black",
+    // textShadowOffset: { width: 3, height: 0 },
+    // textShadowRadius: 3,
+  },
+  CatproductsTitle: {
+    color: "white",
+    fontSize: 23,
+    fontFamily: "oswald,reggae-One",
+    fontWeight: "bold",
+    textAlign: "center",
+    justifyContent: "center",
+    margin: 5,
+
   },
 
 
