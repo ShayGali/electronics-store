@@ -1,11 +1,12 @@
-import { View, Text, Image,TouchableOpacity,ScrollView ,Divider } from 'react-native';
+import { View, Text, Image,TouchableOpacity,ScrollView ,Divider,Alert  } from 'react-native';
 import styles from '../assets/Style';
 import { PRODUCTS } from '../data/data';
-import { ShoppingCartOutlined } from '@ant-design/icons'
+import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
+// import { IconFill, IconOutline } from "@ant-design/icons-react-native";
 // import { Divider } from 'react-native-elements'
 
 
-export default function ProductDetail({ route, navigation }) {
+export default function ProductsDetailScreen({ route, navigation }) {
 
   const productID = route.params.productID
 
@@ -40,7 +41,11 @@ export default function ProductDetail({ route, navigation }) {
           <View style={{ flexDirection: "row" }}>
             <Text style={[styles.regText, { marginBottom: 5 }]}>Add to cart -{'>'}  </Text>
 
-            <TouchableOpacity><Text>sadsd</Text></TouchableOpacity>
+            <TouchableOpacity 
+              onPress={()=>navigation.navigate("Cart",{productID: currentProduct.id,productName: currentProduct.title,flag: true })}
+              >
+              <Icon name="cart" style={{ fontSize:50}}/>
+            </TouchableOpacity>
             
           </View> 
         </View>
