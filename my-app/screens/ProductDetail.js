@@ -15,7 +15,7 @@ export default function ProductsDetailScreen({ route, navigation }) {
   const image = { uri: currentProduct.imgUrl }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.BG}>
       <ScrollView>
         <View style={{ margin: 50 }}>
           <View>
