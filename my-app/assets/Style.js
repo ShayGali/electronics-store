@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 const inputViewSize = 350;
 const inputLabelSize = inputViewSize / 2;
+const font = "oswald";
 
 export default StyleSheet.create({
   //Main body
@@ -43,9 +44,11 @@ export default StyleSheet.create({
     textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
-    fontFamily: "oswald,reggae-One",
-    fontWeight: "bold",
-    margin: 10,
+    // fontFamily: "oswald,reggae-One",
+    fontFamily: font,
+    // fontWeight: "bold",
+    margin: 5,
+    elevation: 3, // for android - to see the shadow
   },
 
   //BG img
@@ -60,12 +63,13 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignContent: "center",
     fontSize: 40,
-    fontFamily: "oswald,reggae-One",
+    // fontFamily: "oswald,reggae-One",
+    fontFamily: font,
     color: "beige",
     textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
-    fontWeight: "bold",
+    // fontWeight: "bold",
   },
 
   headLines: {
@@ -73,13 +77,15 @@ export default StyleSheet.create({
     alignContent: "center",
     fontSize: 40,
     color: "#fff",
-    fontFamily: "oswald,reggae-One",
+    // fontFamily: "oswald,reggae-One",
+    fontFamily: font,
   },
 
   regText: {
     fontSize: 23,
     color: "cornsilk",
-    fontFamily: "oswald,reggae-One",
+    // fontFamily: "oswald,reggae-One",
+    fontFamily: font,
   },
   prodImg: {
     marginTop: 30,
@@ -119,8 +125,9 @@ export default StyleSheet.create({
   AddToCartText: {
     color: "black",
     fontSize: 30,
-    fontFamily: "oswald,reggae-One",
-    fontWeight: "bold",
+    fontFamily: font,
+    // fontFamily: "oswald,reggae-One",
+    // fontWeight: "bold",
     marginLeft: 15,
     textShadowColor: "black",
     // textShadowOffset: { width: 3, height: 0 },
@@ -129,8 +136,9 @@ export default StyleSheet.create({
   CatproductsTitle: {
     color: "white",
     fontSize: 23,
-    fontFamily: "oswald,reggae-One",
-    fontWeight: "bold",
+    fontFamily: font,
+    // fontFamily: "oswald,reggae-One",
+    // fontWeight: "bold",
     textAlign: "center",
     justifyContent: "center",
     margin: 5,
@@ -154,11 +162,15 @@ export default StyleSheet.create({
     padding: 3,
   },
   textInput: {
+    // fontFamily: "oswald,reggae-One",
+    fontFamily: font,
+    color: "white",
     fontSize: 18,
     marginLeft: inputViewSize * 0.25,
     marginRight: inputViewSize * 0.25,
   },
   button: {
+    marginTop: 20,
     width: 150,
   },
   inputError: {
