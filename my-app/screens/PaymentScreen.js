@@ -122,6 +122,9 @@ export default function PaymentScreen({ route, navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        
+        <View style={{margin: 30}}></View> 
+        
         <View style={styles.inputView}>
           <Text style={styles.textInput}>first name</Text>
           <TextInput
@@ -198,7 +201,7 @@ export default function PaymentScreen({ route, navigation }) {
           </Text>
         </View>
 
-        <View style={[styles.inputView]}>
+        <View style={[styles.inputView, {marginBottom: 50}]}>
           <Text style={[styles.textInput]}>CVV</Text>
           <TextInput
             onChangeText={(text) => setCVVNumber(text)}
