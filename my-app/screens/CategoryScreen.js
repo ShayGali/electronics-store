@@ -19,11 +19,11 @@ export default function CategoryScreen({ route, navigation }) {
             categoryName: item.title
           })}}> 
 
-      <ImageBackground imageStyle={{borderRadius: 25}} source={{uri:item.imgUrl}} resizeMode='contain' style={styles.BGImg}>
+      <ImageBackground imageStyle={{borderRadius: 25, opacity: 0.6}} source={{uri:item.imgUrl}} resizeMode='contain' style={styles.BGImg}>
       {/* <View style={{alignItems:"center",justifyContent:'center'}}> */}
       <View style={[styles.gridContainer]} >
-          <Text style={styles.CatproductsTitle}>{item.title}</Text>
-          <Text style={styles.CatproductsTitle}>{item.price}$</Text>
+          <Text style={styles.CatproductsTitle, {fontSize: 28}}>{item.title}</Text>
+          <Text style={styles.CatproductsTitle, {fontSize: 35}}>{item.price}$</Text>
         </View>
       </ImageBackground>
       
@@ -39,7 +39,7 @@ export default function CategoryScreen({ route, navigation }) {
           keyExtractor={(item) => item.id}
           data={displayedProducts}
           renderItem={renderGridItem}
-          numColumns={2}
+          numColumns={1}
         />
     </View>
   );
