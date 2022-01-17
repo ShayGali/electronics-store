@@ -23,7 +23,7 @@ export default function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="HomeScreen">
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
+        <Stack.Screen name="CategoryScreen" component={CategoryScreen} options={({ route }) => ({title:["Amount of products: ", route.params.categoryAmount] })}/> 
         <Stack.Screen name="ProductDetail" component={ProductsDetailScreen} />
         <Stack.Screen name="Cart" component={CartScreen} />
         <Stack.Screen name="Payment" component={PaymentScreen} />
