@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const inputViewSize = 350;
 const inputLabelSize = inputViewSize / 2;
-const font = "oswald";
+const font = "Oswald_300Light";
 
 export default StyleSheet.create({
   //Main body
