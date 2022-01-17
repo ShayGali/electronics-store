@@ -12,12 +12,12 @@ export const COUPONS = [
 
 
 export const CATEGORIES = [
-    new Categories('c1','Air conditioners','https://image.flaticon.com/icons/png/512/1247/1247269.png' ),
-    new Categories("c2",'Refrigerators', 'https://image.flaticon.com/icons/png/512/1233/1233788.png'),
-    new Categories("c3",'Baking ovens','https://image.flaticon.com/icons/png/512/1252/1252084.png'),
-    new Categories("c4",'Stoves','https://image.flaticon.com/icons/png/512/1118/1118814.png'),
-    new Categories("c5",'Computer','https://image.flaticon.com/icons/png/512/765/765250.png'),
-    new Categories("c6",'Phones','https://image.flaticon.com/icons/png/512/1250/1250911.png'),
+    new Categories('c1','Air conditioners','https://image.flaticon.com/icons/png/512/1247/1247269.png', 4),
+    new Categories("c2",'Refrigerators', 'https://image.flaticon.com/icons/png/512/1233/1233788.png', 4),
+    new Categories("c3",'Baking ovens','https://image.flaticon.com/icons/png/512/1252/1252084.png', 4),
+    new Categories("c4",'Stoves','https://image.flaticon.com/icons/png/512/1118/1118814.png', 4),
+    new Categories("c5",'Computer','https://image.flaticon.com/icons/png/512/765/765250.png', 4),
+    new Categories("c6",'Phones','https://image.flaticon.com/icons/png/512/1250/1250911.png', 4),
 ]
 
 export const PRODUCTS = [
