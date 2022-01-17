@@ -103,7 +103,7 @@ export default StyleSheet.create({
     borderRadius: 20,
     margin: 5,
     padding: 20,
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
   },
 
   viewProductImg: {
