@@ -26,9 +26,9 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.BG}>
-      <View style={styles.container}>
+      {/* <View style={styles.container}> */}
         <Text style={[styles.titles,{fontSize:50}]}>Categories</Text>
-      </View>
+      {/* </View> */}
 
       <FlatList
         keyExtractor={(item) => item.id}

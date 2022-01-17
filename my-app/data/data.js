@@ -9,8 +9,6 @@ export const COUPONS = [
     {id:"3", coupon:"IDK_O^O", discountPercentages: 50}
 ]
 
-
-
 export const CATEGORIES = [
     new Categories('c1','Air conditioners','https://image.flaticon.com/icons/png/512/1247/1247269.png', 4),
     new Categories("c2",'Refrigerators', 'https://image.flaticon.com/icons/png/512/1233/1233788.png', 4),

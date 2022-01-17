@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  SafeAreaView,
-  ScrollView,
-} from "react-native";
-
+import { Text,View,Button,TextInput,SafeAreaView,ScrollView} from "react-native";
 import styles from "../assets/Style";
 
 export default function PaymentScreen({ route, navigation }) {
@@ -120,13 +112,13 @@ export default function PaymentScreen({ route, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.BG}>
       <ScrollView style={styles.scrollView}>
-        
+
         <View style={{margin: 30}}></View> 
         
-        <View style={styles.inputView}>
-          <Text style={styles.textInput}>first name</Text>
+        <View style={[styles.inputView]}>
+          <Text style={styles.textInput}>First name: </Text>
           <TextInput
             onChangeText={(text) => setFname(text)}
             style={[styles.input, isFnameValid ? "" : styles.inputError]}
@@ -137,7 +129,7 @@ export default function PaymentScreen({ route, navigation }) {
         </View>
 
         <View style={styles.inputView}>
-          <Text style={styles.textInput}>last name</Text>
+          <Text style={styles.textInput}>Last name: </Text>
           <TextInput
             onChangeText={(text) => setLname(text)}
             style={[styles.input, isLnameValid ? "" : styles.inputError]}
@@ -148,7 +140,7 @@ export default function PaymentScreen({ route, navigation }) {
         </View>
 
         <View style={styles.inputView}>
-          <Text style={styles.textInput}>email</Text>
+          <Text style={styles.textInput}>Email: </Text>
           <TextInput
             onChangeText={(text) => setEmail(text)}
             style={[styles.input, isEmailValid ? "" : styles.inputError]}
@@ -159,7 +151,7 @@ export default function PaymentScreen({ route, navigation }) {
         </View>
 
         <View style={styles.inputView}>
-          <Text style={styles.textInput}>state</Text>
+          <Text style={styles.textInput}>State: </Text>
           <TextInput
             onChangeText={(text) => setState(text)}
             style={[styles.input, isStateValid ? "" : styles.inputError]}
@@ -170,7 +162,7 @@ export default function PaymentScreen({ route, navigation }) {
         </View>
 
         <View style={[styles.inputView]}>
-          <Text style={[styles.textInput]}>credit card number</Text>
+          <Text style={[styles.textInput]}>Credit card number: </Text>
           <TextInput
             onChangeText={(text) => setCreditCardNumber(text)}
             style={[
@@ -186,7 +178,7 @@ export default function PaymentScreen({ route, navigation }) {
         </View>
 
         <View style={[styles.inputView]}>
-          <Text style={[styles.textInput]}>expression date</Text>
+          <Text style={[styles.textInput]}>Expression date: </Text>
           <TextInput
             onChangeText={(text) => setExpressionDate(text)}
             style={[
@@ -194,7 +186,6 @@ export default function PaymentScreen({ route, navigation }) {
               isExpressionDateValid ? "" : styles.inputError,
             ]}
             maxLength={5}
-            placeholder={"MM/YY"}
           />
           <Text style={styles.errorMsg}>
             {isExpressionDateValid ? "" : "Enter valid expression date"}
@@ -219,12 +210,12 @@ export default function PaymentScreen({ route, navigation }) {
           title="Submit"
           style={styles.button}
           onPress={() => {
-            if (true || checkIfAllFilled() & checkCreditCardDetails()) {
+            if (checkIfAllFilled() && checkCreditCardDetails()) {
               navigation.replace("Ordered");
             }
           }}
         />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }

@@ -13,7 +13,6 @@ export default function CategoryScreen({ route, navigation }) {
   const displayedProducts = PRODUCTS.filter(item => item.category == categoryID)
   const renderGridItem = ({ item }) => {
     return (
-      
     <TouchableOpacity style={styles.gridItem} onPress={()=>{navigation.navigate("ProductDetail", {
             productID: item.id,
             categoryName: item.title
@@ -22,8 +21,8 @@ export default function CategoryScreen({ route, navigation }) {
       <ImageBackground imageStyle={{borderRadius: 25, opacity: 0.6}} source={{uri:item.imgUrl}} resizeMode='contain' style={styles.BGImg}>
       {/* <View style={{alignItems:"center",justifyContent:'center'}}> */}
       <View style={[styles.gridContainer]} >
-          <Text style={styles.CatproductsTitle, {fontSize: 28}}>{item.title}</Text>
-          <Text style={styles.CatproductsTitle, {fontSize: 35}}>{item.price}$</Text>
+          <Text style={[styles.titles, {fontSize: 28}]}>{item.title}</Text>
+          <Text style={[styles.titles, {fontSize: 35}]}>{item.price}$</Text>
         </View>
       </ImageBackground>
       
