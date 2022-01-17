@@ -7,7 +7,7 @@ export default function OrderedScreen({ route, navigation }) {
 
   return (
     <View>
-      <Text>{Cart[0].id}</Text>
+      <Text>Thank you for your order</Text>
       <Button
         title="Go to Home Screen..."
         onPress={() => navigation.navigate("HomeScreen")}
