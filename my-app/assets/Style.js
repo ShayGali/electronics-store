@@ -9,7 +9,7 @@ export default StyleSheet.create({
   BG: {
     flex: 1,
     // backgroundColor: "#F8F9F9"
-    backgroundColor: "#1C2833"
+    backgroundColor: "#1C2833",
   },
   container: {
     flex: 1,
@@ -20,7 +20,6 @@ export default StyleSheet.create({
   // fontFam:{
   //   fontFamily: ''
   // }
-
 
   //GridComponent
   gridItem: {
@@ -36,7 +35,6 @@ export default StyleSheet.create({
     shadowOffset: { width: 2, height: 4 },
     shadowRadius: 10,
     elevation: 3, // for android - to see the shadow
-    
   },
   titles: {
     fontSize: 25,
@@ -53,23 +51,21 @@ export default StyleSheet.create({
     elevation: 3, // for android - to see the shadow
   },
 
-
   //BG img
   BGImg: {
     height: 145,
     backgroundColor: "#85C1E9",
-    borderRadius: 25
+    borderRadius: 25,
   },
-
 
   // Product Page
   mainHL: {
-    justifyContent: 'center',
-    alignContent: 'center',
+    justifyContent: "center",
+    alignContent: "center",
     fontSize: 40,
     // fontFamily: "oswald,reggae-One",
     fontFamily: font,
-    color: 'beige',
+    color: "beige",
     textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
@@ -77,17 +73,17 @@ export default StyleSheet.create({
   },
 
   headLines: {
-    justifyContent: 'center',
-    alignContent: 'center',
+    justifyContent: "center",
+    alignContent: "center",
     fontSize: 40,
-    color: '#fff',
+    color: "#fff",
     // fontFamily: "oswald,reggae-One",
     fontFamily: font,
   },
 
   regText: {
     fontSize: 23,
-    color: 'cornsilk',
+    color: "cornsilk",
     // fontFamily: "oswald,reggae-One",
     fontFamily: font,
   },
@@ -99,33 +95,31 @@ export default StyleSheet.create({
     borderRadius: 25,
     borderWidth: 6,
     borderColor: "#48C9B0",
-    backgroundColor:"white",
-
+    backgroundColor: "white",
   },
   boxFrame: {
     borderWidth: 4,
-    borderColor: '#48C9B0',
+    borderColor: "#48C9B0",
     borderRadius: 20,
-    margin:5,
-    padding:20,
+    margin: 5,
+    padding: 20,
     flexWrap: "nowrap",
   },
 
-  viewProductImg:{
+  viewProductImg: {
     alignItems: "center",
   },
 
   AddToCart: {
     backgroundColor: "#48C9B0",
     borderWidth: 4,
-    borderColor: 'white',
+    borderColor: "white",
     borderRadius: 20,
     shadowColor: "grey",
     shadowOpacity: 0.7,
     shadowOffset: { width: 2, height: 4 },
     shadowRadius: 7,
     elevation: 3, // for android - to see the shadow
-
   },
 
   AddToCartText: {
@@ -148,7 +142,6 @@ export default StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     margin: 5,
-
   },
 
   input: {
@@ -187,7 +180,4 @@ export default StyleSheet.create({
     marginLeft: inputViewSize * 0.25,
     marginRight: inputViewSize * 0.25,
   },
-
-
-
 });

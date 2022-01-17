@@ -1,27 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { createContext, useContext } from "react";
-import { PRODUCTS } from "../data/data";
+import { Text, View, Button } from "react-native";
+import { PRODUCTS, cart } from "../data/data";
 
-// const Context = createContext(PRODUCTS[0]);
-
-export default function CartScreen ({ route, navigation }) {
-  const value = route.params.productName
+export default function CartScreen({ navigation }) {
   return (
     <View>
-        <Text>Cart</Text>
-        {/* <Context.Provider value={value}>
-          <MyProduct/>
-        </Context.Provider> */}
-        <Button
+      <Text>Cart</Text>
+      <Text>{cart.map((product) => product.id)}</Text>
+      <Button
         title="Go to Payment..."
         onPress={() => navigation.navigate("Payment")}
       />
     </View>
   );
 }
-
-// function MyProduct() {
-//   const value = useContext(Context);
-//   return <span>{value}</span>;
-// }

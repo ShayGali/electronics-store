@@ -14,8 +14,6 @@ import CartScreen from "../screens/CartScreen";
 import PaymentScreen from "../screens/PaymentScreen";
 import OrderedScreen from "../screens/OrderedScreen";
 
-
-
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
@@ -23,13 +21,18 @@ export default function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="HomeScreen">
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="CategoryScreen" component={CategoryScreen} options={({ route }) => ({title:["Amount of products: ", route.params.categoryAmount] })}/> 
+        <Stack.Screen
+          name="CategoryScreen"
+          component={CategoryScreen}
+          options={({ route }) => ({
+            title: "Amount of products: " + route.params.categoryAmount,
+          })}
+        />
         <Stack.Screen name="ProductDetail" component={ProductsDetailScreen} />
         <Stack.Screen name="Cart" component={CartScreen} />
         <Stack.Screen name="Payment" component={PaymentScreen} />
         <Stack.Screen name="Ordered" component={OrderedScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    
   );
 }

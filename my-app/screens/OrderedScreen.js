@@ -1,10 +1,6 @@
-import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { Cart } from "../App";
+import { Text, View, Button } from "react-native";
 
 export default function OrderedScreen({ route, navigation }) {
-  let Cart = useContext(Cart);
-
   return (
     <View>
       <Text>Thank you for your order</Text>

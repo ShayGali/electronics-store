@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Text,View,Button,TextInput,SafeAreaView,ScrollView} from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
 import styles from "../assets/Style";
 
 export default function PaymentScreen({ route, navigation }) {
@@ -114,9 +121,8 @@ export default function PaymentScreen({ route, navigation }) {
   return (
     <SafeAreaView style={styles.BG}>
       <ScrollView style={styles.scrollView}>
+        <View style={{ margin: 30 }}></View>
 
-        <View style={{margin: 30}}></View> 
-        
         <View style={[styles.inputView]}>
           <Text style={styles.textInput}>First name: </Text>
           <TextInput
@@ -192,7 +198,7 @@ export default function PaymentScreen({ route, navigation }) {
           </Text>
         </View>
 
-        <View style={[styles.inputView, {marginBottom: 50}]}>
+        <View style={[styles.inputView, { marginBottom: 50 }]}>
           <Text style={[styles.textInput]}>CVV</Text>
           <TextInput
             onChangeText={(text) => setCVVNumber(text)}
@@ -210,7 +216,7 @@ export default function PaymentScreen({ route, navigation }) {
           title="Submit"
           style={styles.button}
           onPress={() => {
-            if (checkIfAllFilled() && checkCreditCardDetails()) {
+            if (true || (checkIfAllFilled() && checkCreditCardDetails())) {
               navigation.replace("Ordered");
             }
           }}

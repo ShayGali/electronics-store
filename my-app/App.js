@@ -1,9 +1,9 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import AppNavigator from "./navigation/AppNavigation";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { I18nManager } from "react-native";
 
-// import * as Font from "expo-font"; // import font
-// import AppLoading from "expo-app-loading";
+I18nManager.forceRTL(false);
+I18nManager.allowRTL(false);
 
 import AppLoading from "expo-app-loading";
 import {
@@ -32,7 +32,6 @@ expo install expo-app-loading
 //  };
 
 export default function App() {
-
   let [fontsLoaded, err] = useFonts({
     Oswald_200ExtraLight,
     Oswald_300Light,
@@ -48,7 +47,7 @@ export default function App() {
   else return <AppNavigator />;
 
   // const[dataLoaded, setDataLoaded] = useState(false);
-  
+
   // if(!dataLoaded){
   //   return(
   //     <AppLoading
@@ -62,7 +61,7 @@ export default function App() {
   // return (
   //   // <View>
   //     <AppNavigator/>
-  //     /* <Header myheader="Electrics store" />  
+  //     /* <Header myheader="Electrics store" />
   //   </View> */
 
   // );
