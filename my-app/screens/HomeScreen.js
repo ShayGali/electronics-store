@@ -10,7 +10,8 @@ export default function HomeScreen({ navigation }) {
     return (
       <TouchableOpacity style={styles.gridItem} onPress={()=>{navigation.navigate("CategoryScreen", {
             categoryID: item.id,
-            categoryName: item.title
+            categoryName: item.title,
+            categoryAmount: item.amount
           })}}>
 
       <ImageBackground imageStyle={{borderRadius: 25, opacity:0.4}} source={{uri:item.imgUrl}} resizeMode={"cover"} style={styles.BGImg}>
