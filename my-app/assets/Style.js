@@ -153,6 +153,7 @@ export default StyleSheet.create({
 
   input: {
     height: 30,
+    color: "white",
     width: inputLabelSize,
     borderColor: "white",
     borderWidth: 2,
@@ -179,6 +180,15 @@ export default StyleSheet.create({
     marginTop: 20,
     width: 150,
   },
+  couponButton:{
+    margin: 20,
+    borderRadius: 4,
+    //width: ,
+    backgroundColor: "#48C9B0",
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 3,
+  },
   inputError: {
     borderColor: "#ff0000",
   },
@@ -191,3 +201,4 @@ export default StyleSheet.create({
 
 
 });
+
