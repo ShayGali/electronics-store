@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, Button,TextInput, FlatList,ImageBackground } from "react-native";
+import { Text, View, Button,TextInput, FlatList,ImageBackground, TouchableOpacity } from "react-native";
 import { PRODUCTS, cart, COUPONS } from "../data/data";
 import styles from '../assets/Style';
 
@@ -69,11 +69,20 @@ export default function CartScreen({ route, navigation }) {
             {isCouponValid ? "" : "There is no such coupon..."}
           </Text>
 
-          <Button
+          {/* <Button
           title="Submit"
           style={styles.couponButton}
           onPress={() => checkIfExists()}
-        />
+          /> */}
+          <View style={{flexDirection: "center", justifyContect: "center", alignItems: 'center', textAlign: "center"}}>
+          <TouchableOpacity
+            style={styles.checkButton}
+            onPress={() => {
+              checkIfExists()
+            }}>
+            <Text style={styles.checkButtonText}>CHECK</Text>
+          </TouchableOpacity>
+          </View>
         </View>
           <Text style={styles.titles}>Price after coupon discount: {priceDiscount}$</Text>
 
