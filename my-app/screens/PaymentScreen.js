@@ -5,20 +5,26 @@ import styles from "../assets/Style";
 export default function PaymentScreen({ route, navigation }) {
   let [fname, setFname] = useState("");
   let [lname, setLname] = useState("");
+  let [phoneNumber, setPhoneNumber] = useState("");
   let [email, setEmail] = useState("");
   let [country, setCountry] = useState("");
   let [city, setCity] = useState("");
   let [address, setAddress] = useState("");
+  let [cardholderName, setCardholderName] = useState("");
+  let [cardholderId, setCardholderId] = useState("");
   let [creditCardNumber, setCreditCardNumber] = useState("");
   let [expressionDate, setExpressionDate] = useState("");
   let [CVVNumber, setCVVNumber] = useState("");
 
   let [isFnameValid, setIsFnameValid] = useState(true);
   let [isLnameValid, setIsLnameValid] = useState(true);
+  let [isPhoneNumberValid, setIsPhoneNumberValid] = useState(true);
   let [isEmailValid, setIsEmailValid] = useState(true);
   let [isCountryValid, setIsCountryValid] = useState(true);
   let [isCityValid, setIsCityValid] = useState(true);
   let [isAddressValid, setIsAddressValid] = useState(true);
+  let [isCardholderNameValid, setIsCardholderNameValid] = useState(true);
+  let [isCardholderIdValid, setIsCardholderIdValid] = useState(true);
   let [isCreditCardNumberValid, setIsCreditCardValid] = useState(true);
   let [isExpressionDateValid, setIsExpressionDateValid] = useState(true);
   let [isCVVNumberValid, setIsCVVNumberValid] = useState(true);
@@ -34,6 +40,11 @@ export default function PaymentScreen({ route, navigation }) {
       setIsLnameValid(false);
       isValid = false;
     } else setIsLnameValid(true);
+
+    if (phoneNumber == "" || phoneNumber.length != 10) {
+      setIsPhoneNumberValid(false);
+      isValid = false;
+    } else setIsPhoneNumberValid(true);
 
     if (
       email.indexOf("@") == -1 ||
@@ -58,6 +69,16 @@ export default function PaymentScreen({ route, navigation }) {
       setIsAddressValid(false);
       isValid = false;
     } else setIsAddressValid(true);
+
+    if (cardholderName == "") {
+      setIsCardholderNameValid(false);
+      isValid = false;
+    } else setIsCardholderNameValid(true);
+
+    if (cardholderId == "" || cardholderId.length != 9) {
+      setIsCardholderIdValid(false);
+      isValid = false;
+    } else setIsCardholderIdValid(true);
 
     if (creditCardNumber == "") {
       setIsCreditCardValid(false);
@@ -130,7 +151,7 @@ export default function PaymentScreen({ route, navigation }) {
       <ScrollView style={styles.scrollView}>
 
         <View style={{margin: 20}}></View> 
-        <Text style={styles.titles}>Enter your payment details: </Text>
+        <Text style={styles.titles}>Enter your details: </Text>
         <View style={[styles.inputView]}>
           <Text style={styles.textInput}>First name: </Text>
           <TextInput
@@ -150,6 +171,17 @@ export default function PaymentScreen({ route, navigation }) {
           />
           <Text style={styles.errorMsg}>
             {isLnameValid ? "" : "Enter last name"}
+          </Text>
+        </View>
+
+        <View style={styles.inputView}>
+          <Text style={styles.textInput}>Phone number: </Text>
+          <TextInput
+            onChangeText={(text) => setPhoneNumber(text)}
+            style={[styles.input, isPhoneNumberValid ? "" : styles.inputError]}
+          />
+          <Text style={styles.errorMsg}>
+            {isPhoneNumberValid ? "" : "Enter a phone number"}
           </Text>
         </View>
 
@@ -194,6 +226,30 @@ export default function PaymentScreen({ route, navigation }) {
           />
           <Text style={styles.errorMsg}>
             {isAddressValid ? "" : "Enter an address"}
+          </Text>
+        </View>
+
+        <Text style={styles.titles}>Enter credit card details: </Text>
+
+        <View style={[styles.inputView]}>
+          <Text style={styles.textInput}>Cardholder name: </Text>
+          <TextInput
+            onChangeText={(text) => setCardholderName(text)}
+            style={[styles.input, isCardholderNameValid ? "" : styles.inputError]}
+          />
+          <Text style={styles.errorMsg}>
+            {isCardholderNameValid ? "" : "Enter name"}
+          </Text>
+        </View>
+
+        <View style={[styles.inputView]}>
+          <Text style={styles.textInput}>Cardholder id number: </Text>
+          <TextInput
+            onChangeText={(text) => setCardholderId(text)}
+            style={[styles.input, isCardholderIdValid ? "" : styles.inputError]}
+          />
+          <Text style={styles.errorMsg}>
+            {isCardholderIdValid ? "" : "Enter name"}
           </Text>
         </View>
 
