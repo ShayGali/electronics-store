@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  SafeAreaView,
-  ScrollView,
-} from "react-native";
+import { Text,View,Button,TextInput,SafeAreaView,ScrollView} from "react-native";
 import styles from "../assets/Style";
 
 export default function PaymentScreen({ route, navigation }) {
   let [fname, setFname] = useState("");
   let [lname, setLname] = useState("");
   let [email, setEmail] = useState("");
-  let [state, setState] = useState("");
+  let [country, setCountry] = useState("");
   let [creditCardNumber, setCreditCardNumber] = useState("");
   let [expressionDate, setExpressionDate] = useState("");
   let [CVVNumber, setCVVNumber] = useState("");
@@ -21,7 +14,7 @@ export default function PaymentScreen({ route, navigation }) {
   let [isFnameValid, setIsFnameValid] = useState(true);
   let [isLnameValid, setIsLnameValid] = useState(true);
   let [isEmailValid, setIsEmailValid] = useState(true);
-  let [isStateValid, setIsStateValid] = useState(true);
+  let [isCountryValid, setIsCountryValid] = useState(true);
   let [isCreditCardNumberValid, setIsCreditCardValid] = useState(true);
   let [isExpressionDateValid, setIsExpressionDateValid] = useState(true);
   let [isCVVNumberValid, setIsCVVNumberValid] = useState(true);
@@ -47,10 +40,10 @@ export default function PaymentScreen({ route, navigation }) {
       isValid = false;
     } else setIsEmailValid(true);
 
-    if (state == "") {
-      setIsStateValid(false);
+    if (country == "") {
+      setIsCountryValid(false);
       isValid = false;
-    } else setIsStateValid(true);
+    } else setIsCountryValid(true);
 
     if (creditCardNumber == "") {
       setIsCreditCardValid(false);
@@ -121,8 +114,9 @@ export default function PaymentScreen({ route, navigation }) {
   return (
     <SafeAreaView style={styles.BG}>
       <ScrollView style={styles.scrollView}>
-        <View style={{ margin: 30 }}></View>
 
+        <View style={{margin: 20}}></View> 
+        <Text style={styles.titles}>Enter your payment details: </Text>
         <View style={[styles.inputView]}>
           <Text style={styles.textInput}>First name: </Text>
           <TextInput
@@ -157,13 +151,13 @@ export default function PaymentScreen({ route, navigation }) {
         </View>
 
         <View style={styles.inputView}>
-          <Text style={styles.textInput}>State: </Text>
+          <Text style={styles.textInput}>Country: </Text>
           <TextInput
-            onChangeText={(text) => setState(text)}
-            style={[styles.input, isStateValid ? "" : styles.inputError]}
+            onChangeText={(text) => setCountry(text)}
+            style={[styles.input, isCountryValid ? "" : styles.inputError]}
           />
           <Text style={styles.errorMsg}>
-            {isStateValid ? "" : "Enter state"}
+            {isCountryValid ? "" : "Enter a country"}
           </Text>
         </View>
 
@@ -179,7 +173,7 @@ export default function PaymentScreen({ route, navigation }) {
             maxLength={16}
           />
           <Text style={styles.errorMsg}>
-            {isCreditCardNumberValid ? "" : "Enter  valid credit card number"}
+            {isCreditCardNumberValid ? "" : "Enter a valid credit card number"}
           </Text>
         </View>
 
@@ -198,7 +192,7 @@ export default function PaymentScreen({ route, navigation }) {
           </Text>
         </View>
 
-        <View style={[styles.inputView, { marginBottom: 50 }]}>
+        <View style={[styles.inputView, {marginBottom: 50}]}>
           <Text style={[styles.textInput]}>CVV</Text>
           <TextInput
             onChangeText={(text) => setCVVNumber(text)}
@@ -216,7 +210,7 @@ export default function PaymentScreen({ route, navigation }) {
           title="Submit"
           style={styles.button}
           onPress={() => {
-            if (true || (checkIfAllFilled() && checkCreditCardDetails())) {
+            if (checkIfAllFilled() && checkCreditCardDetails()) {
               navigation.replace("Ordered");
             }
           }}
