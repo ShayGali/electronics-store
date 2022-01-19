@@ -197,8 +197,33 @@ export default StyleSheet.create({
     marginLeft: inputViewSize * 0.25,
     marginRight: inputViewSize * 0.25,
   },
-
-
+  checkButtonText: {
+    fontSize: 23,
+    color: "white",
+    textAlign: "center",
+    textShadowColor: "black",
+    textShadowOffset: { width: 3, height: 0 },
+    textShadowRadius: 3,
+    fontFamily: font,
+    elevation: 3, // for android - to see the shadow
+    flexDirection: "center",
+    justifyContect: "center",
+    textAlign: 'auto'
+  },
+  checkButton: {
+  backgroundColor: "#48C9B0",
+    borderWidth: 4,
+    borderColor: 'white',
+    borderRadius: 20,
+    shadowColor: "grey",
+    shadowOpacity: 0.7,
+    shadowOffset: { width: 2, height: 4 },
+    shadowRadius: 7,
+    elevation: 3, // for android - to see the shadow
+    justifyContect: "center",
+    alignItems: 'center',
+    width: 100,
+    height: 45
+}
 
 });
-
