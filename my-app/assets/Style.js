@@ -206,8 +206,6 @@ export default StyleSheet.create({
     textShadowRadius: 3,
     fontFamily: font,
     elevation: 3, // for android - to see the shadow
-    flexDirection: "center",
-    justifyContect: "center",
     textAlign: 'auto'
   },
   checkButton: {
@@ -220,7 +218,6 @@ export default StyleSheet.create({
     shadowOffset: { width: 2, height: 4 },
     shadowRadius: 7,
     elevation: 3, // for android - to see the shadow
-    justifyContect: "center",
     alignItems: 'center',
     width: 100,
     height: 45
