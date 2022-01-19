@@ -7,6 +7,8 @@ export default function PaymentScreen({ route, navigation }) {
   let [lname, setLname] = useState("");
   let [email, setEmail] = useState("");
   let [country, setCountry] = useState("");
+  let [city, setCity] = useState("");
+  let [address, setAddress] = useState("");
   let [creditCardNumber, setCreditCardNumber] = useState("");
   let [expressionDate, setExpressionDate] = useState("");
   let [CVVNumber, setCVVNumber] = useState("");
@@ -15,6 +17,8 @@ export default function PaymentScreen({ route, navigation }) {
   let [isLnameValid, setIsLnameValid] = useState(true);
   let [isEmailValid, setIsEmailValid] = useState(true);
   let [isCountryValid, setIsCountryValid] = useState(true);
+  let [isCityValid, setIsCityValid] = useState(true);
+  let [isAddressValid, setIsAddressValid] = useState(true);
   let [isCreditCardNumberValid, setIsCreditCardValid] = useState(true);
   let [isExpressionDateValid, setIsExpressionDateValid] = useState(true);
   let [isCVVNumberValid, setIsCVVNumberValid] = useState(true);
@@ -44,6 +48,16 @@ export default function PaymentScreen({ route, navigation }) {
       setIsCountryValid(false);
       isValid = false;
     } else setIsCountryValid(true);
+
+    if (city == "") {
+      setIsCityValid(false);
+      isValid = false;
+    } else setIsCityValid(true);
+
+    if (address == "") {
+      setIsAddressValid(false);
+      isValid = false;
+    } else setIsAddressValid(true);
 
     if (creditCardNumber == "") {
       setIsCreditCardValid(false);
@@ -161,6 +175,28 @@ export default function PaymentScreen({ route, navigation }) {
           </Text>
         </View>
 
+        <View style={styles.inputView}>
+          <Text style={styles.textInput}>City: </Text>
+          <TextInput
+            onChangeText={(text) => setCity(text)}
+            style={[styles.input, isCityValid ? "" : styles.inputError]}
+          />
+          <Text style={styles.errorMsg}>
+            {isCityValid ? "" : "Enter a city"}
+          </Text>
+        </View>
+
+        <View style={styles.inputView}>
+          <Text style={styles.textInput}>Address: </Text>
+          <TextInput
+            onChangeText={(text) => setAddress(text)}
+            style={[styles.input, isAddressValid ? "" : styles.inputError]}
+          />
+          <Text style={styles.errorMsg}>
+            {isAddressValid ? "" : "Enter an address"}
+          </Text>
+        </View>
+
         <View style={[styles.inputView]}>
           <Text style={[styles.textInput]}>Credit card number: </Text>
           <TextInput
@@ -211,7 +247,11 @@ export default function PaymentScreen({ route, navigation }) {
           style={styles.button}
           onPress={() => {
             if (checkIfAllFilled() && checkCreditCardDetails()) {
-              navigation.replace("Ordered");
+              navigation.replace("Ordered", {
+              country: country,
+              city: city,
+              address: address
+              });
             }
           }}
         />
