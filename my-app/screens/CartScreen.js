@@ -74,7 +74,7 @@ export default function CartScreen({ route, navigation }) {
           style={styles.couponButton}
           onPress={() => checkIfExists()}
           /> */}
-          <View style={{flexDirection: "center", alignContect: "center", alignItems: 'center', textAlign: "center"}}>
+          <View style={{ alignItems: 'center', textAlign: "center"}}>
           <TouchableOpacity
             style={styles.checkButton}
             onPress={() => {
