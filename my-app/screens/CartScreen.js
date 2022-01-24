@@ -14,6 +14,10 @@ import { PRODUCTS, cart, COUPONS } from "../data/data";
 import styles from "../assets/Style";
 
 export default function CartScreen({ route, navigation }) {
+  const [state, setState] = useState(false);
+
+  setTimeout(() => setState(false), 500);
+
   let productsInCart = cart;
   productsInCart = productsInCart.filter((product) => product.numOfOrders > 0);
 
@@ -66,6 +70,14 @@ export default function CartScreen({ route, navigation }) {
             </Text>
           </View>
         </ImageBackground>
+        <Button
+          title="hello"
+          onPress={() => {
+            let product = cart.find((i) => item.product.id == i.product.id);
+            product.numOfOrders--;
+            setState(true);
+          }}
+        />
       </View>
     );
   };
@@ -77,6 +89,7 @@ export default function CartScreen({ route, navigation }) {
         keyExtractor={(item) => item.product.id}
         data={productsInCart}
         renderItem={renderGridItem}
+        extraData={state}
       />
       <View>
         <Text style={styles.titles}>Final price: {price}$</Text>
