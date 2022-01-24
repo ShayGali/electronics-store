@@ -24,14 +24,15 @@ export default function CartScreen({ route, navigation }) {
   const price = productsInCart.reduce(function (prev, current) {
     return +(
       (prev + current.product.price + current.product.shippingPrice) *
-        current.numOfOrders +
-      ""
-    ).slice(0, 6);
+        current.numOfOrders
+    ).toFixed(2);
   }, 0);
 
-  let [priceDiscount, setPriceDiscount] = useState(+price);
+  let [priceDiscount, setPriceDiscount] = useState(price);
   let [myCoupon, setCoupon] = useState("");
   let [isCouponValid, setIsCouponValid] = useState(true);
+  let [discount, setDiscount] = useState(0)
+
 
   const cExists = COUPONS.find((item) => item.coupon == myCoupon);
 
@@ -40,8 +41,8 @@ export default function CartScreen({ route, navigation }) {
     if (cExists != undefined) {
       setIsCouponValid(true);
       isValid = true;
-      let discount = +cExists.discountPercentages;
-      setPriceDiscount(+priceDiscount * (1 - +discount));
+      setDiscount(cExists.discountPercentages);
+      setPriceDiscount((priceDiscount * (1 - discount)).toFixed(2));
       return priceDiscount;
     } else {
       setIsCouponValid(false);
@@ -51,6 +52,18 @@ export default function CartScreen({ route, navigation }) {
 
   const renderGridItem = ({ item }) => {
     return (
+      <Swipeout right={[{
+        text: 'Delete',
+        backgroundColor: 'red',
+        underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
+        onPress: () => { let product = cart.find((i) => item.product.id == i.product.id);
+            product.numOfOrders--;
+            setState(true); 
+            setPriceDiscount((price - item.product.price - item.product.shippingPrice).toFixed(2));
+            }
+      }]}
+        autoClose= {true}
+        backgroundColor= 'transparent'>
       <View style={styles.gridItem}>
         <ImageBackground
           imageStyle={{ borderRadius: 25, opacity: 0.6 }}
@@ -70,15 +83,9 @@ export default function CartScreen({ route, navigation }) {
             </Text>
           </View>
         </ImageBackground>
-        <Button
-          title="hello"
-          onPress={() => {
-            let product = cart.find((i) => item.product.id == i.product.id);
-            product.numOfOrders--;
-            setState(true);
-          }}
-        />
+        
       </View>
+      </Swipeout>
     );
   };
 
