@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from "../assets/Style";
 import { PRODUCTS, cart } from "../data/data";
@@ -65,7 +67,20 @@ export default function ProductDetail({ route, navigation }) {
                 justifyContent: "flex-end",
               }}
               onPress={() => {
-                cart.push(currentProduct);
+                let numOfOrders = cart.filter(
+                  (item) => item.product === currentProduct
+                ).length;
+
+                if (numOfOrders == 0) {
+                  cart.push({
+                    product: currentProduct,
+                    numOfOrders: 1,
+                  });
+                } else {
+                  cart.forEach((item) => {
+                    item.product == currentProduct ? item.numOfOrders++ : "";
+                  });
+                }
                 navigation.navigate("Cart");
               }}
             >
