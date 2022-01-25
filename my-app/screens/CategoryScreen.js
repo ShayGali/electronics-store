@@ -38,7 +38,7 @@ export default function CategoryScreen({ route, navigation }) {
           {/* <View style={{alignItems:"center",justifyContent:'center'}}> */}
           <View style={[styles.gridContainer]}>
             <Text style={[styles.titles, { fontSize: 28 }]}>{item.title}</Text>
-            <Text style={[styles.titles, { fontSize: 35 }]}>{item.price}$</Text>
+            <Text style={[styles.titles, { fontSize: 35 }]}>{(item.price).toFixed(2)}$</Text>
           </View>
         </ImageBackground>
       </TouchableOpacity>
