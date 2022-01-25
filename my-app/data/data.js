@@ -69,10 +69,10 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/81v0ZJ--h3L._AC_SL1500_.jpg",
     "Cools 150 Square Feet",
     "Energy efficient air conditioning unit cools rooms up to 150 square feet with standard 9 foot ceilings,Ideal for small spaces such as dorm rooms and RVs Features include: 7 temperature settings, dual cooling and fan settings as well as adjustable air direction",
-    379.0,
+    379.00,
     "15.98 x 13.19 x 12.05 inches",
     "35.27 Pound",
-    112.0,
+    112.00,
     new Review(30, 2, 5, 6, 2)
   ),
   new Product(
@@ -84,7 +84,7 @@ export const PRODUCTS = [
     724.39,
     "150.98 x 23.19 x 12.05 inches",
     "70.05 Pound",
-    250.0,
+    250.00,
     new Review(8, 10, 25, 23, 0)
   ),
   new Product(
@@ -110,7 +110,7 @@ export const PRODUCTS = [
     499.99,
     "23.74 x 27.48 x 61.81 inches",
     "125.7 Pound",
-    250.0,
+    250.00,
     new Review(85, 24, 98, 12, 4)
   ),
   new Product(
@@ -119,10 +119,10 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/612R+csw4SL._AC_SL1500_.jpg",
     "Wine Cooler Smad 19 Bottles",
     "🥂Accurate Temperature Control: Precise temperature can be set between 39.2℉~64.4℉(4~18 °C) according to your needs. Smad wine coolers’ compressor technology ensures the temperature is stable. That is the suitable present for your own use or a gift to boyfriend/husband/ father and so on.",
-    359.0,
+    359.00,
     "204 x 216 x 300 inches",
     "48.5 Pound",
-    "242.51",
+    242.51,
     new Review(3, 5, 0, 0, 1)
   ),
   new Product(
@@ -144,7 +144,7 @@ export const PRODUCTS = [
     "https://i5.walmartimages.com/asr/f7afdf0c-a489-4a41-accb-131f95589892_1.757d28366d56f583049a0ad42699f467.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
     "Frigidaire 3.2 Cu ft Retro Dry Erase",
     "The Frigidaire Retro Eraser Board Refrigerator will give you the extra storage you need for all of your food and beverage needs. This 3.2 cu ft refrigerators black finish is sure to complement the room and fit any decor perfectly. It will fit nicely in a variety of spaces from dorm rooms to garages. It can make a helpful addition to most homes with its storage capacity. It has a unique composition that allows you to write and erase messages on the front, letting you personalize it in a fun way. The inside includes two adjustable shelves, a 2L bottle storage area, a door can rack and more. The reversible door in this compact refrigerator allows either left- or right-hand opening. It has adjustable food shelves that allow you to keep your groceries organized. The door rack offers additional storage space as well. This Frigidaire Eraser Board Refrigerator is designed to last for a long time to come.",
-    159.0,
+    159.00,
     "18.50 x 18.50 x 32.80 Inches",
     "48 Pound",
     "Free shipping",
@@ -182,7 +182,7 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/81y6nH-Ho+L._AC_SL1500_.jpg",
     "GE Convection Toaster Oven",
     "QUARTZ HEATING ELEMENT - Toast, bake or broil foods quickly thanks to the rapid quartz heating elements that combine with the halogen heating elements to deliver a faster preheat",
-    128.0,
+    128.00,
     "15 x 18 x 11 inches",
     "22 pounds",
     155.09,
@@ -257,7 +257,7 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/61pskHRSN2L._AC_SL1500_.jpg", // img
     "Dell OptiPlex 9020-SFF", // title
     "Dell OptiPlex 9020-SFF, Intel Core i5-4570 3.2GHZ, 16GB RAM, 512GB SSD Solid State, DVDRW, Windows 10 Pro 64bit (Renewed)", // description
-    250.0, // price
+    250.00, // price
     "11.4 x 12.3 x 3.7 inches", // dimensions
     "13.07 Pounds", // weight
     107.17, // shipping price
@@ -269,10 +269,10 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/71dYHi8v0KL._AC_SL1500_.jpg", // img
     "Dell Inspiron 3891 Compact Desktop Computer Tower", // title
     "Intel Core i5-10400, 16GB DDR4 RAM, 256GB SSD + 1TB SATA HDD, Intel UHD Graphics 630 with Shared Graphics Memory, Windows 10H - Black (Latest Model)", // description
-    674.0, // price
+    674.00, // price
     "11.54 x 6.06 x 12.77 inches", // dimensions
     "10.88 Pounds", // weight
-    229.3, // shipping price
+    229.30, // shipping price
     new Review(30, 44, 16, 2, 5) // review
   ),
   new Product(
@@ -281,7 +281,7 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/61glPHSupyL._AC_SL1500_.jpg", // img
     "Dell Optiplex 7020 Desktop Computer", // title
     "Dell Optiplex 7020 Desktop Computer, Intel Quad-Core i7-4770-3.4GHz, 32 GB RAM, 512GB SSD, DVD, USB 3.0, WiFi, HDMI, Windows 10 Pro (Renewed)", // description
-    324.0, // price
+    324.00, // price
     "12.28 x 3.66 x 11.42 inches", // dimensions
     "13.22 Pounds", // weight
     121.84, // shipping price
@@ -331,7 +331,7 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/71ELx8TJfEL._AC_SL1500_.jpg", // img
     "SAMSUNG Galaxy S20 FE 5G", // title
     "Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 30X Space Zoom Night Mode, Cloud Navy (Renewed)", // description
-    435.0, // price
+    435.00, // price
     "7 x 5 x 4 inches", // dimensions
     "6.7 ounces", // weight
     98.33, // shipping price
@@ -343,7 +343,7 @@ export const PRODUCTS = [
     "https://m.media-amazon.com/images/I/61Kdfg4hZPL._AC_SL1500_.jpg", // img
     "Samsung Galaxy S10", // title
     "Samsung Galaxy S10, 128GB, Prism White - Unlocked (Renewed)", // description
-    267.0, // price
+    267.00, // price
     "5.94 x 2.78 x 0.31 inches", // dimensions
     "1.06 ounces", // weight
     60.68, // shipping price
