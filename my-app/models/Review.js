@@ -10,7 +10,7 @@ export default class Review {
             sum += this.review[index] * index+1;
         }
         let numOfReviews = this.review.reduce((a,b)=> a+b,0);
-        return ((sum/numOfReviews).toString()).slice(0,4);
+        return ((sum/numOfReviews).toFixed(2));
     }
 
 }
