@@ -37,18 +37,13 @@ export default function ProductDetail({ route, navigation }) {
               Dimensions: {currentProduct.dimensions}
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Price: {currentProduct.price}$
+              Price: {(currentProduct.price).toFixed(2)}$
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Shipping price: {currentProduct.shippingPrice}$
+              Shipping price: {currentProduct.shippingPrice.toFixed(2)}$
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Final price:{" "}
-              {(currentProduct.price + currentProduct.shippingPrice + "").slice(
-                0,
-                6
-              )}
-              $
+              Final price: {(currentProduct.price + currentProduct.shippingPrice).toFixed(2)}$
             </Text>
           </View>
 
