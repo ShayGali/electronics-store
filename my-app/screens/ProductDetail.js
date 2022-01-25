@@ -95,7 +95,7 @@ export default function ProductDetail({ route, navigation }) {
                   },
                 ]}
               >
-                Add to cart -{">"}{" "}
+                Add to cart
               </Text>
               <Icon name="cart" style={{ fontSize: 50, marginTop: 10 }} />
             </TouchableOpacity>
