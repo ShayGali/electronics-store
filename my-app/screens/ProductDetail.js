@@ -40,7 +40,7 @@ export default function ProductDetail({ route, navigation }) {
               Price: {(currentProduct.price).toFixed(2)}$
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Shipping price: {currentProduct.shippingPrice.toFixed(2)}$
+              Shipping price: {currentProduct.shippingPrice}$
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
               Final price: {(currentProduct.price + currentProduct.shippingPrice).toFixed(2)}$
