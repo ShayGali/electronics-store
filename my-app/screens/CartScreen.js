@@ -8,7 +8,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import Swipeout from "react-native-swipeout";
+// import Swipeout from "react-native-swipeout";
 
 import { PRODUCTS, cart, COUPONS } from "../data/data";
 import styles from "../assets/Style";
@@ -52,18 +52,18 @@ export default function CartScreen({ route, navigation }) {
 
   const renderGridItem = ({ item }) => {
     return (
-      <Swipeout right={[{
-        text: 'Delete',
-        backgroundColor: 'red',
-        underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
-        onPress: () => { let product = cart.find((i) => item.product.id == i.product.id);
-            product.numOfOrders--;
-            setState(true); 
-            setPriceDiscount((price - item.product.price - item.product.shippingPrice).toFixed(2));
-            }
-      }]}
-        autoClose= {true}
-        backgroundColor= 'transparent'>
+      // <Swipeout right={[{
+      //   text: 'Delete',
+      //   backgroundColor: 'red',
+      //   underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
+      //   onPress: () => { let product = cart.find((i) => item.product.id == i.product.id);
+      //       product.numOfOrders--;
+      //       setState(true); 
+      //       setPriceDiscount((price - item.product.price - item.product.shippingPrice).toFixed(2));
+      //       }
+      // }]}
+      //   autoClose= {true}
+      //   backgroundColor= 'transparent'>
       <View style={styles.gridItem}>
         <ImageBackground
           imageStyle={{ borderRadius: 25, opacity: 0.6 }}
@@ -72,10 +72,10 @@ export default function CartScreen({ route, navigation }) {
           style={styles.BGImg}
         >
           <View style={[styles.gridContainer]}>
-            <Text style={[styles.titles, { fontSize: 20 }]}>
+            <Text style={[styles.titles, { fontSize: 25 }]}>
               {item.product.title}
             </Text>
-            <Text style={[styles.titles, { fontSize: 25 }]}>
+            <Text style={[styles.titles, { fontSize: 30 }]}>
               {item.product.price}$
             </Text>
             <Text style={[styles.titles, { fontSize: 25 }]}>
@@ -85,7 +85,7 @@ export default function CartScreen({ route, navigation }) {
         </ImageBackground>
         
       </View>
-      </Swipeout>
+      // </Swipeout>
     );
   };
 
