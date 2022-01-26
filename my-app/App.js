@@ -6,15 +6,19 @@ I18nManager.forceRTL(false);
 I18nManager.allowRTL(false);
 
 import AppLoading from "expo-app-loading";
+// import {
+//   useFonts,
+//   Oswald_200ExtraLight,
+//   Oswald_300Light,
+//   Oswald_400Regular,
+//   Oswald_500Medium,
+//   Oswald_600SemiBold,
+//   Oswald_700Bold,
+// } from "@expo-google-fonts/oswald";
 import {
   useFonts,
-  Oswald_200ExtraLight,
-  Oswald_300Light,
-  Oswald_400Regular,
-  Oswald_500Medium,
-  Oswald_600SemiBold,
-  Oswald_700Bold,
-} from "@expo-google-fonts/oswald";
+  Neucha_400Regular,
+} from "@expo-google-fonts/neucha";
 
 /*
 in terminal - 
@@ -33,14 +37,16 @@ expo install expo-app-loading
 
 export default function App() {
   let [fontsLoaded, err] = useFonts({
-    Oswald_200ExtraLight,
-    Oswald_300Light,
-    Oswald_400Regular,
-    Oswald_500Medium,
-    Oswald_600SemiBold,
-    Oswald_700Bold,
-    "Oswald-VariableFont_wght": require("./assets/fonts/Oswald,Reggae_One/Oswald/Oswald-VariableFont_wght.ttf"),
-    "ReggaeOne-Regular": require("./assets/fonts/Oswald,Reggae_One/Reggae_One/ReggaeOne-Regular.ttf"),
+    // Oswald_200ExtraLight,
+    // Oswald_300Light,
+    // Oswald_400Regular,
+    // Oswald_500Medium,
+    // Oswald_600SemiBold,
+    // Oswald_700Bold,
+    Neucha_400Regular,
+    // "Oswald-VariableFont_wght": require("./assets/fonts/Oswald,Reggae_One/Oswald/Oswald-VariableFont_wght.ttf"),
+    // "ReggaeOne-Regular": require("./assets/fonts/Oswald,Reggae_One/Reggae_One/ReggaeOne-Regular.ttf"),
+    "Neucha-Regular": require("./assets/fonts/Neucha/Neucha-Regular.ttf"),
   });
 
   if (!fontsLoaded) return <AppLoading />;
