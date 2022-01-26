@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
             categoryAmount: item.amount
           })}}>
 
-      <ImageBackground imageStyle={{borderRadius: 25, opacity:0.4}} source={{uri:item.imgUrl}} resizeMode={"cover"} style={styles.BGImg}>
+      <ImageBackground imageStyle={{borderRadius: 25, opacity:0.4}} source={{uri:item.imgUrl}} resizeMode={"contain"} style={styles.BGImg}>
         <View style={styles.gridContainer}>
           <Text style={styles.titles}>{item.title}</Text>
         </View>
