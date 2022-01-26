@@ -41,7 +41,7 @@ export default StyleSheet.create({
     // color: "#48C9B0",
     color: "white",
     textAlign: "center",
-    textShadowColor: "#633974",
+    textShadowColor: "black",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
     // fontFamily: "oswald,reggae-One",
