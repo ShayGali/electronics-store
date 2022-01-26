@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 const inputViewSize = 350;
 const inputLabelSize = inputViewSize / 2;
-const font = "Oswald_300Light";
+// const font = "Oswald_300Light";
+const font = "Neucha_400Regular";
 
 export default StyleSheet.create({
   //Main body
@@ -34,21 +35,19 @@ export default StyleSheet.create({
     shadowOpacity: 0.7,
     shadowOffset: { width: 2, height: 4 },
     shadowRadius: 10,
-    elevation: 3, // for android - to see the shadow
   },
   titles: {
-    fontSize: 25,
+    fontSize: 27,
     // color: "#48C9B0",
     color: "white",
     textAlign: "center",
-    textShadowColor: "black",
+    textShadowColor: "#633974",
     textShadowOffset: { width: 3, height: 0 },
     textShadowRadius: 3,
     // fontFamily: "oswald,reggae-One",
     fontFamily: font,
     // fontWeight: "bold",
     margin: 5,
-    elevation: 3, // for android - to see the shadow
   },
 
   //BG img
@@ -94,12 +93,12 @@ export default StyleSheet.create({
     height: 250,
     borderRadius: 25,
     borderWidth: 6,
-    borderColor: "#48C9B0",
+    borderColor: "#633974",
     backgroundColor: "white",
   },
   boxFrame: {
     borderWidth: 4,
-    borderColor: "#48C9B0",
+    borderColor: "#633974",
     borderRadius: 20,
     margin: 5,
     padding: 20,
@@ -111,7 +110,7 @@ export default StyleSheet.create({
   },
 
   AddToCart: {
-    backgroundColor: "#48C9B0",
+    backgroundColor: "#633974",
     borderWidth: 4,
     borderColor: "white",
     borderRadius: 20,
@@ -177,7 +176,7 @@ export default StyleSheet.create({
     margin: 20,
     borderRadius: 4,
     //width: ,
-    backgroundColor: "#48C9B0",
+    backgroundColor: "#633974",
     alignItems: "center",
     justifyContent: "center",
     elevation: 3,
@@ -202,7 +201,8 @@ export default StyleSheet.create({
     textAlign: "auto",
   },
   checkButton: {
-    backgroundColor: "#48C9B0",
+    backgroundColor: "#633974",
+    padding: 3,
     borderWidth: 4,
     borderColor: "white",
     borderRadius: 20,
