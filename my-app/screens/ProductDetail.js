@@ -21,7 +21,11 @@ export default function ProductDetail({ route, navigation }) {
           </Text>
 
           <View style={[styles.viewProductImg]}>
-            <Image style={[styles.prodImg]} source={image} resizeMode="contain" />
+            <Image
+              style={[styles.prodImg]}
+              source={image}
+              resizeMode="contain"
+            />
           </View>
 
           <Text style={[styles.headLines, { marginBottom: 10 }]}>
@@ -37,13 +41,15 @@ export default function ProductDetail({ route, navigation }) {
               Dimensions: {currentProduct.dimensions}
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Price: {(currentProduct.price)}$
+              Price: {currentProduct.price}$
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Shipping price: {(currentProduct.shippingPrice)}$
+              Shipping price: {currentProduct.shippingPrice}$
             </Text>
             <Text style={[styles.regText, { margin: 5 }]}>
-              Final price: {(currentProduct.price + currentProduct.shippingPrice).toFixed(2)}$
+              Final price:{" "}
+              {(currentProduct.price + currentProduct.shippingPrice).toFixed(2)}
+              $
             </Text>
           </View>
 

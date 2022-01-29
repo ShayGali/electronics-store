@@ -7,11 +7,15 @@ import {
   FlatList,
   ImageBackground,
   TouchableOpacity,
+  Platform,
 } from "react-native";
-import Swipeout from "react-native-swipeout";
 
 import { PRODUCTS, cart, COUPONS } from "../data/data";
 import styles from "../assets/Style";
+import {
+  Swipeable,
+  GestureHandlerRootView,
+} from "react-native-gesture-handler";
 
 export default function CartScreen({ route, navigation }) {
   const [state, setState] = useState(false);
@@ -24,15 +28,14 @@ export default function CartScreen({ route, navigation }) {
   const price = productsInCart.reduce(function (prev, current) {
     return +(
       (prev + current.product.price + current.product.shippingPrice) *
-        current.numOfOrders
+      current.numOfOrders
     ).toFixed(2);
   }, 0);
 
   let [priceDiscount, setPriceDiscount] = useState(price);
   let [myCoupon, setCoupon] = useState("");
   let [isCouponValid, setIsCouponValid] = useState(true);
-  let [discount, setDiscount] = useState(0)
-
+  let [discount, setDiscount] = useState(0);
 
   const cExists = COUPONS.find((item) => item.coupon == myCoupon);
 
@@ -50,42 +53,52 @@ export default function CartScreen({ route, navigation }) {
     }
   };
 
+  let deleteBtnRender = (progress, item) => {
+    return (
+      <TouchableOpacity
+        style={styles.deleteBtn}
+        onPress={() => {
+          let product = cart.find((i) => item.product.id == i.product.id);
+          product.numOfOrders--;
+          setState(true);
+          setPriceDiscount(
+            (price - item.product.price - item.product.shippingPrice).toFixed(2)
+          );
+        }}
+      >
+        <Text style={[styles.titles, { fontSize: 15 }]}>remove from cart</Text>
+      </TouchableOpacity>
+    );
+  };
+
   const renderGridItem = ({ item }) => {
     return (
-      <Swipeout right={[{
-        text: 'Delete',
-        backgroundColor: 'red',
-        underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
-        onPress: () => { let product = cart.find((i) => item.product.id == i.product.id);
-            product.numOfOrders--;
-            setState(true); 
-            setPriceDiscount((price - item.product.price - item.product.shippingPrice).toFixed(2));
-            }
-      }]}
-        autoClose= {true}
-        backgroundColor= 'transparent'>
-      <View style={styles.gridItem}>
-        <ImageBackground
-          imageStyle={{ borderRadius: 25, opacity: 0.6 }}
-          source={{ uri: item.product.imgUrl }}
-          resizeMode="contain"
-          style={styles.BGImg}
+      <GestureHandlerRootView>
+        <Swipeable
+          renderRightActions={(progress) => deleteBtnRender(progress, item)}
         >
-          <View style={[styles.gridContainer]}>
-            <Text style={[styles.titles, { fontSize: 25 }]}>
-              {item.product.title}
-            </Text>
-            <Text style={[styles.titles, { fontSize: 30 }]}>
-              {item.product.price}$
-            </Text>
-            <Text style={[styles.titles, { fontSize: 25 }]}>
-              number of items: {item.numOfOrders}
-            </Text>
+          <View style={styles.gridItem}>
+            <ImageBackground
+              imageStyle={{ borderRadius: 25, opacity: 0.6 }}
+              source={{ uri: item.product.imgUrl }}
+              resizeMode="contain"
+              style={styles.BGImg}
+            >
+              <View style={[styles.gridContainer]}>
+                <Text style={[styles.titles, { fontSize: 25 }]}>
+                  {item.product.title}
+                </Text>
+                <Text style={[styles.titles, { fontSize: 30 }]}>
+                  {item.product.price}$
+                </Text>
+                <Text style={[styles.titles, { fontSize: 25 }]}>
+                  number of items: {item.numOfOrders}
+                </Text>
+              </View>
+            </ImageBackground>
           </View>
-        </ImageBackground>
-        
-      </View>
-     </Swipeout>
+        </Swipeable>
+      </GestureHandlerRootView>
     );
   };
 
