@@ -7,10 +7,9 @@ import {
   FlatList,
   ImageBackground,
   TouchableOpacity,
-  Platform,
 } from "react-native";
 
-import { PRODUCTS, cart, COUPONS } from "../data/data";
+import { cart, COUPONS } from "../data/data";
 import styles from "../assets/Style";
 import {
   Swipeable,

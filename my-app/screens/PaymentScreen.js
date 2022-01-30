@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Text,View,Button,TextInput,SafeAreaView,ScrollView} from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
 import styles from "../assets/Style";
 
 export default function PaymentScreen({ route, navigation }) {
@@ -41,7 +48,7 @@ export default function PaymentScreen({ route, navigation }) {
       isValid = false;
     } else setIsLnameValid(true);
 
-    if (phoneNumber == "" || phoneNumber.length != 10) {
+    if (phoneNumber == "") {
       setIsPhoneNumberValid(false);
       isValid = false;
     } else setIsPhoneNumberValid(true);
@@ -149,8 +156,7 @@ export default function PaymentScreen({ route, navigation }) {
   return (
     <SafeAreaView style={styles.BG}>
       <ScrollView style={styles.scrollView}>
-
-        <View style={{margin: 20}}></View> 
+        <View style={{ margin: 20 }}></View>
         <Text style={styles.titles}>Enter your details: </Text>
         <View style={[styles.inputView]}>
           <Text style={styles.textInput}>First name: </Text>
@@ -235,7 +241,10 @@ export default function PaymentScreen({ route, navigation }) {
           <Text style={styles.textInput}>Cardholder name: </Text>
           <TextInput
             onChangeText={(text) => setCardholderName(text)}
-            style={[styles.input, isCardholderNameValid ? "" : styles.inputError]}
+            style={[
+              styles.input,
+              isCardholderNameValid ? "" : styles.inputError,
+            ]}
           />
           <Text style={styles.errorMsg}>
             {isCardholderNameValid ? "" : "Enter name"}
@@ -247,9 +256,12 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setCardholderId(text)}
             style={[styles.input, isCardholderIdValid ? "" : styles.inputError]}
+            maxLength={9}
           />
           <Text style={styles.errorMsg}>
-            {isCardholderIdValid ? "" : "Enter name"}
+            {isCardholderIdValid
+              ? ""
+              : "Enter valid cardholder id number (9 digits)"}
           </Text>
         </View>
 
@@ -284,7 +296,7 @@ export default function PaymentScreen({ route, navigation }) {
           </Text>
         </View>
 
-        <View style={[styles.inputView, {marginBottom: 50}]}>
+        <View style={[styles.inputView, { marginBottom: 50 }]}>
           <Text style={[styles.textInput]}>CVV</Text>
           <TextInput
             onChangeText={(text) => setCVVNumber(text)}
@@ -304,9 +316,9 @@ export default function PaymentScreen({ route, navigation }) {
           onPress={() => {
             if (checkIfAllFilled() && checkCreditCardDetails()) {
               navigation.replace("Ordered", {
-              country: country,
-              city: city,
-              address: address
+                country: country,
+                city: city,
+                address: address,
               });
             }
           }}
