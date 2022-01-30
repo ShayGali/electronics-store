@@ -159,6 +159,7 @@ export default StyleSheet.create({
     width: inputViewSize,
     justifyContent: "center",
     padding: 3,
+    alignSelf: "center" /* כאן */,
   },
   textInput: {
     // fontFamily: "oswald,reggae-One",
@@ -230,5 +231,22 @@ export default StyleSheet.create({
     shadowOpacity: 0.7,
     shadowOffset: { width: 2, height: 4 },
     shadowRadius: 10,
+  },
+  /** כאן  */
+  navigateButton: {
+    backgroundColor: "#17a2b8",
+    padding: 3,
+    borderWidth: 4,
+    borderColor: "white",
+    borderRadius: 20,
+    shadowColor: "grey",
+    shadowOpacity: 0.7,
+    shadowOffset: { width: 2, height: 4 },
+    shadowRadius: 7,
+    elevation: 3, // for android - to see the shadow
+    alignItems: "center",
+    alignSelf: "center",
+    width: 250,
+    height: 45,
   },
 });
