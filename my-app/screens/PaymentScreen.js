@@ -48,7 +48,7 @@ export default function PaymentScreen({ route, navigation }) {
       isValid = false;
     } else setIsLnameValid(true);
 
-    if (phoneNumber == "") {
+    if (phoneNumber == "" || phoneNumber.length < 10) {
       setIsPhoneNumberValid(false);
       isValid = false;
     } else setIsPhoneNumberValid(true);
@@ -163,9 +163,10 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setFname(text)}
             style={[styles.input, isFnameValid ? "" : styles.inputError]}
+            placeholder="first name..."
           />
           <Text style={styles.errorMsg}>
-            {isFnameValid ? "" : "Enter first name"}
+            {isFnameValid ? "" : "Enter a first name"}
           </Text>
         </View>
 
@@ -174,9 +175,10 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setLname(text)}
             style={[styles.input, isLnameValid ? "" : styles.inputError]}
+            placeholder="last name..."
           />
           <Text style={styles.errorMsg}>
-            {isLnameValid ? "" : "Enter last name"}
+            {isLnameValid ? "" : "Enter a last name"}
           </Text>
         </View>
 
@@ -185,9 +187,10 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setPhoneNumber(text)}
             style={[styles.input, isPhoneNumberValid ? "" : styles.inputError]}
+            placeholder="+972550000000"
           />
           <Text style={styles.errorMsg}>
-            {isPhoneNumberValid ? "" : "Enter a phone number"}
+            {isPhoneNumberValid ? "" : "Enter a valid phone number (at list 10 digits). "}
           </Text>
         </View>
 
@@ -196,9 +199,10 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setEmail(text)}
             style={[styles.input, isEmailValid ? "" : styles.inputError]}
+            placeholder="aaa@gmail.com"
           />
           <Text style={styles.errorMsg}>
-            {isEmailValid ? "" : "Enter valid email"}
+            {isEmailValid ? "" : "Enter a valid email address"}
           </Text>
         </View>
 
@@ -207,6 +211,7 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setCountry(text)}
             style={[styles.input, isCountryValid ? "" : styles.inputError]}
+            placeholder="country..."
           />
           <Text style={styles.errorMsg}>
             {isCountryValid ? "" : "Enter a country"}
@@ -218,6 +223,7 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setCity(text)}
             style={[styles.input, isCityValid ? "" : styles.inputError]}
+            placeholder="city..."
           />
           <Text style={styles.errorMsg}>
             {isCityValid ? "" : "Enter a city"}
@@ -229,9 +235,10 @@ export default function PaymentScreen({ route, navigation }) {
           <TextInput
             onChangeText={(text) => setAddress(text)}
             style={[styles.input, isAddressValid ? "" : styles.inputError]}
+            placeholder="address..."
           />
           <Text style={styles.errorMsg}>
-            {isAddressValid ? "" : "Enter an address"}
+            {isAddressValid ? "" : "Enter a shipping address"}
           </Text>
         </View>
 
@@ -245,9 +252,10 @@ export default function PaymentScreen({ route, navigation }) {
               styles.input,
               isCardholderNameValid ? "" : styles.inputError,
             ]}
+            placeholder="full name..."
           />
           <Text style={styles.errorMsg}>
-            {isCardholderNameValid ? "" : "Enter name"}
+            {isCardholderNameValid ? "" : "Enter a cardholder name"}
           </Text>
         </View>
 
@@ -257,11 +265,12 @@ export default function PaymentScreen({ route, navigation }) {
             onChangeText={(text) => setCardholderId(text)}
             style={[styles.input, isCardholderIdValid ? "" : styles.inputError]}
             maxLength={9}
+            placeholder="123456789"
           />
           <Text style={styles.errorMsg}>
             {isCardholderIdValid
               ? ""
-              : "Enter valid cardholder id number (9 digits)"}
+              : "Enter a valid cardholder id number (9 digits)"}
           </Text>
         </View>
 
@@ -275,9 +284,10 @@ export default function PaymentScreen({ route, navigation }) {
             ]}
             keyboardType="numeric"
             maxLength={16}
+            placeholder="1234567890123456"
           />
           <Text style={styles.errorMsg}>
-            {isCreditCardNumberValid ? "" : "Enter a valid credit card number"}
+            {isCreditCardNumberValid ? "" : "Enter a valid credit card number (16 digits)."}
           </Text>
         </View>
 
@@ -290,9 +300,10 @@ export default function PaymentScreen({ route, navigation }) {
               isExpressionDateValid ? "" : styles.inputError,
             ]}
             maxLength={5}
+            placeholder="01/25"
           />
           <Text style={styles.errorMsg}>
-            {isExpressionDateValid ? "" : "Enter valid expression date"}
+            {isExpressionDateValid ? "" : "Enter a valid expression date (for example: 11/25)"}
           </Text>
         </View>
 
@@ -304,9 +315,10 @@ export default function PaymentScreen({ route, navigation }) {
             keyboardType="numeric"
             maxLength={3}
             secureTextEntry={true}
+            placeholder="123"
           />
           <Text style={styles.errorMsg}>
-            {isCVVNumberValid ? "" : "Enter valid CVV"}
+            {isCVVNumberValid ? "" : "Enter a valid CVV number(3 digits)."}
           </Text>
         </View>
 
