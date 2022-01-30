@@ -16,7 +16,7 @@ import {
   GestureHandlerRootView,
 } from "react-native-gesture-handler";
 
-export default function CartScreen({ route, navigation }) {
+export default function CartScreen({ navigation }) {
   const [state, setState] = useState(false);
 
   setTimeout(() => setState(false), 500);
@@ -147,14 +147,16 @@ export default function CartScreen({ route, navigation }) {
           Price after coupon discount: {priceDiscount}$
         </Text>
 
-        <Button
-          title="Go to Payment..."
+        <TouchableOpacity
+          style={styles.navigateButton}
           onPress={() =>
             navigation.navigate("Payment", {
               finalPrice: priceDiscount,
             })
           }
-        />
+        >
+          <Text style={[styles.checkButtonText]}>Go to Payment...</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
