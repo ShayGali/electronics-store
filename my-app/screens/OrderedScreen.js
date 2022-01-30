@@ -20,7 +20,7 @@ export default function OrderedScreen({ route, navigation }) {
           marginTop: 40,
         }}
       >
-        <Text style={[styles.mainHL, { margin: 10 }]}>
+        <Text style={[styles.mainHL, { margin: 10, textAlign: "center" }]}>
           Thank you for your order!
         </Text>
         <Text style={[styles.titles, { margin: 10 }]}>
