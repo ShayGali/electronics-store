@@ -1,9 +1,10 @@
-import { Text, View, Button } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import styles from "../assets/Style";
 import { cart } from "../data/data";
 
 export default function OrderedScreen({ route, navigation }) {
-  while (cart.length > 0) cart.pop();
+  while (cart.length > 0) cart.pop(); // לרוקן את העגלה
+
   let a = route.params.address;
   let ci = route.params.city;
   let co = route.params.country;
@@ -11,7 +12,13 @@ export default function OrderedScreen({ route, navigation }) {
   return (
     <View style={styles.BG}>
       <View
-        style={{ padding: 20, textAlign: "center", alignContent: "center" }}
+        style={{
+          padding: 20,
+          textAlign: "center",
+          alignContent: "center",
+          alignSelf: "center",
+          marginTop: 40,
+        }}
       >
         <Text style={[styles.mainHL, { margin: 10 }]}>
           Thank you for your order!
@@ -29,10 +36,12 @@ export default function OrderedScreen({ route, navigation }) {
           Your address: {a}, {ci}, {co}
         </Text>
 
-        <Button
-          title="Go to Home Screen..."
+        <TouchableOpacity
+          style={[styles.navigateButton, { marginTop: 150 }]}
           onPress={() => navigation.navigate("HomeScreen")}
-        />
+        >
+          <Text style={[styles.checkButtonText]}>Go to Home Screen...</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
