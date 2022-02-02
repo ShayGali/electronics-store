@@ -100,10 +100,11 @@ export default function CartScreen({ navigation }) {
                 <Text style={[styles.titles, { fontSize: 25 }]}>
                   {item.product.title}
                 </Text>
-                <Text style={[styles.titles, { fontSize: 30 }]}>
-                  {item.product.price}$
-                </Text>
                 <Text style={[styles.titles, { fontSize: 25 }]}>
+                  price: {item.product.price}$ {"\n"}
+                  shipping price: {item.product.shippingPrice!==0?item.product.shippingPrice + "$":"free shipping"}
+                </Text>
+                <Text style={[styles.titles, { fontSize: 20 }]}>
                   number of items: {item.numOfOrders}
                 </Text>
               </View>
@@ -122,9 +123,8 @@ export default function CartScreen({ navigation }) {
         data={productsInCart}
         renderItem={renderGridItem}
       />
-      <View>
-        
 
+      <View>
         <View style={[styles.inputView]}>
           <Text style={styles.textInput}>Coupon: </Text>
           <TextInput
@@ -155,7 +155,6 @@ export default function CartScreen({ navigation }) {
         </View>
         <Text style={styles.titles}>Cart subtotal: {price}$</Text>
         <Text style={[styles.titles, discountPercentages===0?{display:"none"}:""]}>Cart total after discount: {priceAfterDiscount}$</Text>
-      
 
         <TouchableOpacity
           style={styles.navigateButton}
