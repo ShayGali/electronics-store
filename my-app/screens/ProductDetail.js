@@ -87,7 +87,7 @@ export default function ProductDetail({ route, navigation }) {
                 navigation.navigate("Cart");
               }}
             >
-              <Text style={styles.AddToCartText}> Add to cart </Text>
+              <Text style={styles.AddToCartText}>Add to cart</Text>
               <Icon name="cart" style={{ fontSize: 50, marginTop: 10 }} />
             </TouchableOpacity>
           </View>
