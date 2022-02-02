@@ -154,7 +154,7 @@ export default function CartScreen({ navigation }) {
           </View>
         </View>
         <Text style={styles.titles}>Cart subtotal: {price}$</Text>
-        {discountPercentages!==0?<Text style={styles.titles}>Cart total after discount: {priceAfterDiscount}$</Text>:""}
+        <Text style={[styles.titles, discountPercentages===0?{display:"none"}:""]}>Cart total after discount: {priceAfterDiscount}$</Text>
       
 
         <TouchableOpacity
