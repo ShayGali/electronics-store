@@ -19,6 +19,7 @@ export default function HomeScreen({ navigation }) {
         onPress={() => {
           navigation.navigate("CategoryScreen", {
             categoryID: item.id,
+            categoryAmount: item.amount
           });
         }}
       >
