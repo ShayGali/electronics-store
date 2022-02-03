@@ -323,7 +323,7 @@ export default function PaymentScreen({ navigation }) {
         <TouchableOpacity
           style={[styles.navigateButton, {marginBottom:20}]}
           onPress={() => {
-            if (checkIfAllFilled() && checkCreditCardDetails()) {
+            if (checkIfAllFilled() & checkCreditCardDetails()) {
               navigation.replace("Ordered", {
                 country: country,
                 city: city,
