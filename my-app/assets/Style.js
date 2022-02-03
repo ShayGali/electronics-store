@@ -26,7 +26,7 @@ export default StyleSheet.create({
   gridItem: {
     flex: 1,
     margin: 15,
-    height: 150,
+    height: 170,
   },
   gridContainer: {
     flex: 1,
@@ -52,7 +52,7 @@ export default StyleSheet.create({
 
   //BG img
   BGImg: {
-    height: 145,
+    height: 170,
     backgroundColor: "#85C1E9",
     borderRadius: 25,
   },
@@ -163,10 +163,9 @@ export default StyleSheet.create({
     width: inputViewSize,
     justifyContent: "center",
     padding: 3,
-    alignSelf: "center" /* כאן */,
+    alignSelf: "center",
   },
   textInput: {
-    // fontFamily: "oswald,reggae-One",
     fontFamily: font,
     color: "white",
     fontSize: 18,
@@ -237,7 +236,7 @@ export default StyleSheet.create({
     shadowOffset: { width: 2, height: 4 },
     shadowRadius: 10,
   },
-  /** כאן  */
+ 
   navigateButton: {
     backgroundColor: "#17a2b8",
     padding: 3,
