@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../App";
+
 import {
   Text,
   View,
@@ -10,6 +12,8 @@ import {
 import styles from "../assets/Style";
 
 export default function PaymentScreen({ navigation }) {
+  const { emptyTheCart } = useContext(Context);
+
   let [fname, setFname] = useState("");
   let [lname, setLname] = useState("");
   let [phoneNumber, setPhoneNumber] = useState("");
@@ -324,6 +328,7 @@ export default function PaymentScreen({ navigation }) {
           style={[styles.navigateButton, { marginBottom: 20 }]}
           onPress={() => {
             if (true || checkIfAllFilled() & checkCreditCardDetails()) {
+              emptyTheCart();
               navigation.replace("Ordered", {
                 country: country,
                 city: city,

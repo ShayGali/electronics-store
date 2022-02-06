@@ -3,6 +3,7 @@ import { Context } from "../App";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from "../assets/Style";
 import { PRODUCTS } from "../data/data";
+import ProductInCart from "../models/ProductInCart";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 
 export default function ProductDetail({ route, navigation }) {
@@ -72,21 +73,15 @@ export default function ProductDetail({ route, navigation }) {
               }}
               onPress={() => {
                 // check if the product is already in the cart so we can add it the the count of the product
-                let numOfOrders = cart.filter(
+                let currentProductInTheCart = cart.find(
                   (item) => item.product === currentProduct
-                ).length;
-
+                );
                 // if he is not in the cart so we need to add it to the cart with numOfOrders = 1
-                if (numOfOrders == 0) {
-                  addToCart({
-                    product: currentProduct,
-                    numOfOrders: 1,
-                  });
+                if (currentProductInTheCart == undefined) {
+                  addToCart(new ProductInCart(currentProduct));
                   // if he is already in the cart so we add 1 to the product numOfOrders
                 } else {
-                  cart.forEach((item) => {
-                    item.product == currentProduct ? item.numOfOrders++ : "";
-                  });
+                  currentProductInTheCart.numOfOrders++;
                 }
                 navigation.navigate("Cart");
               }}

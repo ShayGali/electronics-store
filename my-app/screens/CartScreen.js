@@ -5,18 +5,14 @@ import {
   View,
   TextInput,
   FlatList,
-  ImageBackground,
   TouchableOpacity,
 } from "react-native";
 
 import { COUPONS } from "../data/data";
 import styles from "../assets/Style";
-import {
-  Swipeable,
-  GestureHandlerRootView,
-} from "react-native-gesture-handler";
 
 import DeleteBtn from "../components/DeleteBtn";
+import CartGridTile from "../components/CartGridTile";
 
 export default function CartScreen({ navigation }) {
   const { cart, removeFromCart, removeProductWithZeroOrderers } =
@@ -80,40 +76,14 @@ export default function CartScreen({ navigation }) {
 
   const renderGridItem = ({ item }) => {
     return (
-      <GestureHandlerRootView>
-        <Swipeable
-          /*
-        if the user swipe from left to right
-        then it will render a delete button
-        */
-          renderRightActions={(progress) => deleteBtnRender(progress, item)}
-        >
-          <View style={styles.gridItem}>
-            <ImageBackground
-              imageStyle={{ borderRadius: 25, opacity: 0.6 }}
-              source={{ uri: item.product.imgUrl }}
-              resizeMode="contain"
-              style={styles.BGImg}
-            >
-              <View style={[styles.gridContainer]}>
-                <Text style={[styles.titles, { fontSize: 25 }]}>
-                  {item.product.title}
-                </Text>
-                <Text style={[styles.titles, { fontSize: 25 }]}>
-                  price: {item.product.price}$ {"\n"}
-                  shipping price:{" "}
-                  {item.product.shippingPrice !== 0
-                    ? item.product.shippingPrice + "$"
-                    : "free shipping"}
-                </Text>
-                <Text style={[styles.titles, { fontSize: 20 }]}>
-                  number of items: {item.numOfOrders}
-                </Text>
-              </View>
-            </ImageBackground>
-          </View>
-        </Swipeable>
-      </GestureHandlerRootView>
+      <CartGridTile
+        renderRightActions={(progress) => deleteBtnRender(progress, item)}
+        imgUrl={item.product.imgUrl}
+        title={item.product.title}
+        price={item.product.price}
+        shippingPrice={item.product.shippingPrice}
+        numOfOrders={item.numOfOrders}
+      />
     );
   };
 

@@ -2,8 +2,6 @@ import Categories from "../models/Categories";
 import Product from "../models/Product";
 import Review from "../models/Review";
 
-export let cart = []; // array of products that will be added to the cart
-
 // array of coupons with the discount percentages
 export const COUPONS = [
   { id: "1", coupon: "ShayG$", discountPercentages: 0.15 },

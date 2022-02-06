@@ -42,7 +42,6 @@ export default function OrderedScreen({ route, navigation }) {
           style={[styles.navigateButton, { marginTop: 150 }]}
           onPress={() => {
             navigation.navigate("HomeScreen");
-            emptyTheCart();
           }}
         >
           <Text style={[styles.buttonText]}>Go to Home Screen...</Text>
