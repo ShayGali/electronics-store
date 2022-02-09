@@ -1,12 +1,7 @@
-import React, { useState, useContext } from "react";
-import { Context } from "../App";
-
 import { Text, View, TouchableOpacity } from "react-native";
 import styles from "../assets/Style";
 
 export default function OrderedScreen({ route, navigation }) {
-  const { emptyTheCart } = useContext(Context);
-
   let a = route.params.address;
   let ci = route.params.city;
   let co = route.params.country;

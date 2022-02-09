@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  View,
-  FlatList,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-} from "react-native";
+import { View, FlatList, Text } from "react-native";
 import styles from "../assets/Style";
 import { PRODUCTS } from "../data/data";
 

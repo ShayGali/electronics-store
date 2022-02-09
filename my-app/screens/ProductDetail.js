@@ -8,6 +8,7 @@ import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 
 export default function ProductDetail({ route, navigation }) {
   const { cart, addToCart } = useContext(Context);
+
   const currentProduct = PRODUCTS.find(
     (product) => product.id === route.params.productID
   );

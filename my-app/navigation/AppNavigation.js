@@ -23,18 +23,31 @@ export default function AppNavigator() {
     <NavigationContainer>
       {/* the default navigation will be the home screen*/}
       <Stack.Navigator initialRouteName="HomeScreen">
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={({ route, navigation }) => ({
+            headerRight: () => (
+              <Icon
+                onPress={() => navigation.navigate("Cart", { CartScreen })}
+                name="cart"
+                style={{ fontSize: 35, margin: 10 }}
+              />
+            ),
+          })}
+        />
         <Stack.Screen
           name="CategoryScreen"
           component={CategoryScreen}
-          options={({ route , navigation }) => ({
+          options={({ route, navigation }) => ({
             title: "Amount of products: " + route.params.categoryAmount, // the amount of products will be displayed on thw top of the screen
             headerRight: () => (
-            <Icon onPress={() => 
-                navigation.navigate("Cart", {CartScreen})
-              } name="cart" style={{ fontSize: 35, margin: 10 }}
-            />
-          ),
+              <Icon
+                onPress={() => navigation.navigate("Cart", { CartScreen })}
+                name="cart"
+                style={{ fontSize: 35, margin: 10 }}
+              />
+            ),
           })}
         />
         <Stack.Screen
@@ -43,33 +56,57 @@ export default function AppNavigator() {
           options={({ route, navigation }) => ({
             title: route.params.headerTitle,
             headerRight: () => (
-            <Icon onPress={() => 
-                navigation.navigate("Cart", {CartScreen})
-              } name="cart" style={{ fontSize: 35, margin: 10 }}
-            />
-          ),
+              <Icon
+                onPress={() => navigation.navigate("Cart", { CartScreen })}
+                name="cart"
+                style={{ fontSize: 35, margin: 10 }}
+              />
+            ),
           })}
         />
-        <Stack.Screen name="Cart" component={CartScreen} 
-        options={({ navigation }) => ({
+        <Stack.Screen
+          name="Cart"
+          component={CartScreen}
+          options={({ navigation }) => ({
             headerRight: () => (
-            <Icon onPress={() => 
-                navigation.navigate("HomeScreen", {HomeScreen})
-              } name="home" style={{ fontSize: 35, margin: 10 }}
-            />
-          ),
+              <Icon
+                onPress={() =>
+                  navigation.navigate("HomeScreen", { HomeScreen })
+                }
+                name="home"
+                style={{ fontSize: 35, margin: 10 }}
+              />
+            ),
           })}
-          />
-        <Stack.Screen name="Payment" component={PaymentScreen} />
+        />
+        <Stack.Screen
+          name="Payment"
+          component={PaymentScreen}
+          options={({ navigation }) => ({
+            headerRight: () => (
+              <Icon
+                onPress={() =>
+                  navigation.navigate("HomeScreen", { HomeScreen })
+                }
+                name="home"
+                style={{ fontSize: 35, margin: 10 }}
+              />
+            ),
+          })}
+        />
         <Stack.Screen
           name="Ordered"
           component={OrderedScreen}
-          options={({ navigation }) => ({ headerLeft: () => null ,
+          options={({ navigation }) => ({
+            headerLeft: () => null,
             headerRight: () => (
-            <Icon onPress={() => 
-                navigation.navigate("HomeScreen", {HomeScreen})
-              } name="home" style={{ fontSize: 35, margin: 10 }}
-            />
+              <Icon
+                onPress={() =>
+                  navigation.navigate("HomeScreen", { HomeScreen })
+                }
+                name="home"
+                style={{ fontSize: 35, margin: 10 }}
+              />
             ),
           })}
         />
