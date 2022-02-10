@@ -2,7 +2,7 @@
 final project in react-native course
 
 
-<img height=300 src="./myapp/assets/app pic/home screen.png">
+<img  src="./myapp/assets/app pic/home screen.png">
 <img height=300 src="./myapp/assets/app pic/category.png">
 <img height=300 src="./myapp/assets/app pic/product detail 1.png">
 <img height=300 src="./myapp/assets/app pic/product detail 2.png">
