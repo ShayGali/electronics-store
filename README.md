@@ -21,7 +21,6 @@ All the electronics categories that can be purchase from in the app:
   
 <img height=500 src="./myapp/assets/app pic/home screen.png">
 
-#
 
 ## Category Screen
 
@@ -33,7 +32,6 @@ All the products in one of the categories
   
 <img height=500 src="./myapp/assets/app pic/category.png">
 
-#
 
 ## Product Details Screen
 
@@ -49,7 +47,6 @@ All the Details of one of the products in the app.
 
 <img height=500 src="./myapp/assets/app pic/product detail 2.png"><br>
 
-#
 
 ## Cart Screen
 
@@ -77,7 +74,6 @@ The cart with all the products that have been added by the user to the cart.
 
 <img height=500 src="./myapp/assets/app pic/cart 2.png"><br>
 
-#
 
 ## Payment Screen
 
