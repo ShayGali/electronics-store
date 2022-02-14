@@ -9,7 +9,6 @@ Final project in react-native course.
 
 This app is an online shopping electronics store application.
 
-<br>
 
 # Screen shots from the app:
 
