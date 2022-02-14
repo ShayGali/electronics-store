@@ -19,8 +19,7 @@ All the electronics categories that can be purchase from in the app:
 
 - There is an cart icon above, in the header of the app, that by clicking on it, it will navigate to the shopping cart screen in the app.
   
-<img height=500 src="./myapp/assets/app pic/home screen.
-png">
+<img height=500 src="./myapp/assets/app pic/home screen.png">
 
 #
 
@@ -32,8 +31,7 @@ All the products in one of the categories
   
 - There is an cart icon above in the header as well, that by clicking on it, it will navigate to the shopping cart in the app.
   
-<img height=500 src="./myapp/assets/app pic/category.
-png">
+<img height=500 src="./myapp/assets/app pic/category.png">
 
 #
 
@@ -45,13 +43,11 @@ All the Details of one of the products in the app.
   
 - There is an cart icon above in the header as well, that by clicking on it, it will navigate to the shopping cart in the app.
 
-<img height=500 src="./myapp/assets/app pic/product detail 1.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/product detail 1.png"><br>
 
 - By clicking on the "Add to cart" button the current product will be added to the cart, and the user will be navigated to the cart screen.
 
-<img height=500 src="./myapp/assets/app pic/product detail 2.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/product detail 2.png"><br>
 
 #
 
@@ -73,15 +69,13 @@ The cart with all the products that have been added by the user to the cart.
   
 - There is an home icon above, in the header of the app, that by clicking on it, it will navigate to the home screen in the app.
 
-<img height=500 src="./myapp/assets/app pic/cart 1.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/cart 1.png"><br>
 
 - By sliding an item to the left, remove button will appear and by clicking it, the current product will remove from the cart(the subtotal price will be updated as well).
   
 - By entering a coupon code, a new total price will appear which is the calculation of the subtotal price and the discount precentage of this coupon code, unless there is no such coupon code and will appear an appropriate message to the user.
 
-<img height=500 src="./myapp/assets/app pic/cart 2.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/cart 2.png"><br>
 
 #
 
@@ -93,23 +87,19 @@ In this page the user will fill his details and credit card details to pay for t
   
 - There is an home icon above, in the header of the app, that by clicking on it, it will navigate to the home screen in the app.
 
-<img height=500 src="./myapp/assets/app pic/payment 1.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/payment 1.png"><br>
 
 - By clicking on the "Submit" button the user will be navigated to the ordered screen.
 
-<img height=500 src="./myapp/assets/app pic/payment 2.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/payment 2.png"><br>
 
 ## Payment Screen - Error
 
 The payment screen in case the input boxes are empty and the user pressed submit.
 
-<img height=500 src="./myapp/assets/app pic/payment 3.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/payment 3.png"><br>
 
-<img height=500 src="./myapp/assets/app pic/pmayment 4.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/pmayment 4.png"><br>
 
 ## ordered Screen
 
@@ -119,5 +109,4 @@ This screen will appear only after the user filled all the details in the paymen
 
 - There is an home icon above, in the header of the app, that by clicking on it, it will navigate to the home screen in the app.
 
-<img height=500 src="./myapp/assets/app pic/ordered.
-png"><br>
+<img height=500 src="./myapp/assets/app pic/ordered.png"><br>
