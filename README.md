@@ -3,6 +3,7 @@
 
 All rights reserved - Shay gali and Shir Segev
 
+<br>
 
 Final project in react-native course.
 
